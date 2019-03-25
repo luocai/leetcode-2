@@ -13,25 +13,28 @@ public class lc3 {
         String s = "abba";
         System.out.println(lengthOfLongestSubstring(s));
     }
-
-    public static int lengthOfLongestSubstring(String s) {
-        HashMap<Character,Integer> hm = new HashMap<>();
-        int max = 0;
-        int j = 0;
-        for (int i = 0; i <s.length() ; i++) {
-            if(hm.containsKey(s.charAt(i))) {
-                j = Math.max(hm.get(s.charAt(i))+1,j);
-                //if input="abbabc"
-                //when i = 3, s.chatAt(3) == 'a' ,
-                //we will found last 'a' appears at index 0,
-                //but we should not update j from 2 ('b') to 0 ('a'),
-                //because here although the 'a' is in hashMap, but it appears before 'b'.
+    
+    public int lengthOfLongestSubstring(String s) {
+        //滑动窗口 ， r一直走，如果遇到重复， l向前走
+        Map<Character,Integer> map = new HashMap();
+        int res = 0;
+        int l = 0, r = 0;
+        
+        while( r < s.length()){
+            
+            if(map.containsKey(s.charAt(r))){
+                l = Math.max(map.get(s.charAt(r))+1, l); //如果 这个字符在 j之前出现了，不管
             }
-            //i到j没有重复的字母，所以+1
-            //写到if外，因为可能该串本身就没有重复的字母，以及串首与串尾也要考虑
-            max = Math.max(i-j+1,max);
-            hm.put(s.charAt(i), i);
-        };
-        return max;
+            
+          
+            res = Math.max(r-l +1, res);
+            map.put(s.charAt(r), r); // //记录某个字符最后出现的位置
+              r++;
+            
+        }
+       
+        return res;
     }
+
+    
 }
