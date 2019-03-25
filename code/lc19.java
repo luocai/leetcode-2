@@ -8,28 +8,27 @@ package code;
  * 注意：看清题意，是倒数第n个，且复杂度为n
  */
 public class lc19 {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode low = new ListNode(0);
-        ListNode fast = new ListNode(0);
-        ListNode res = low;
-        low.next = head;
-        fast.next = head;
-        while(n>0){
-            fast = fast.next;
+     public ListNode removeNthFromEnd(ListNode head, int n) {
+        
+        ListNode p = head;
+        ListNode q = head;
+        
+        while(n > 0 && p != null){
+            p = p.next;
             n--;
         }
-        while(fast.next!=null){
-            low = low.next;
-            fast = fast.next;
+        if(n != 0)
+            return null;
+        if(p == null){
+            return head.next;
         }
-        ListNode temp = low.next.next;
-        low.next = temp;
-        return res.next;
-    }
-
-     public class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
+        while(p.next != null){
+            p = p.next;
+            q = q.next;
+        }
+        
+        q.next = q.next.next;
+        
+        return head;
     }
 }
