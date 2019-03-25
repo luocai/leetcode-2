@@ -12,7 +12,45 @@ public class lc17 {
     public static void main(String[] args) {
         System.out.println(letterCombinations("23").toString());
     }
+    
+    //递归的做法
+    public List<String> letterCombinations(String digits) {
+		
+		List<String> result = new ArrayList<>();
+		
+		if (digits.length() == 0){
+			return result;
+		}
+		
+		String[] arr= {"abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+		
+		String res = "";
+		
+			
+		
+		solve(res, 0, arr, digits, result);
+		
+		
+		
+		return result;
+		
+		
+    }
+	
+	public void solve(String res, int index,String[] arr,String digits,List<String> result){
+		if(index == digits.length()){
+			result.add(res);
+			return ;
+		}
+		
+        //分支
+		for(int i = 0; i < arr[digits.charAt(index)-'0'-2].length(); i++){
+			solve(res + arr[digits.charAt(index)-'0'-2].charAt(i),index+1,arr,digits,result);
+		}
+	}
 
+    
+    //非递归
     public static List<String> letterCombinations(String digits) {
         Vector<String> res = new Vector<>();
         if(digits.length()==0)
