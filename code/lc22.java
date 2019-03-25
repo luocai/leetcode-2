@@ -17,34 +17,32 @@ public class lc22 {
         System.out.println(generateParenthesis2(4));
     }
 
-    public static List<String> generateParenthesis(int n) {
-        //递归法
-        Set<String> res = new HashSet<String>();
-        if(n==1) {
-            res.add("()");
-            return new ArrayList(res);
-        }
-        List<String> temp = generateParenthesis(n-1);
-        // 一个括号，和n-1个括号的组合
-        for (int i = 0; i < temp.size(); i++) {
-            res.add("("+temp.get(i)+")");
-            res.add("()"+temp.get(i));
-            res.add(temp.get(i)+"()");
-        }
-        //2块拼一起
-        for (int j = 2; j <=n/2 ; j++) {
-            List<String> temp1 = generateParenthesis(j);
-            List<String> temp2 = generateParenthesis(n-j);
-            for (int i = 0; i <temp1.size() ; i++) {
-                for (int k = 0; k < temp2.size(); k++) {
-                    res.add(temp1.get(i)+temp2.get(k));
-                    res.add(temp2.get(k)+temp1.get(i));
-                }
-            }
-        }
-        return new ArrayList(res);
+    //回溯法
+     List<String> res = new ArrayList();
+    public List<String> generateParenthesis(int n) {
+        solution(n , n, "");
+        
+        return res;
     }
-
+    
+    public void solution(int a, int b, String r){
+        
+        if(a > b || a < 0 || b < 0)
+            return;
+        
+        if(a == 0 && b == 0){
+            res.add(r);
+        }
+        
+        String t = r + "(";
+        solution(a-1, b, t);
+        t = r + ")";
+        solution(a, b -1, t);
+        
+    }
+    
+    
+    //这也是回溯啦，不是我写的
     public static List<String> generateParenthesis2(int n) {
         //回溯法
         ArrayList<String> res = new ArrayList<>();
