@@ -40,4 +40,39 @@ public class lc10 {
         }
         return dp[s.length()][p.length()];
     }
+    
+    
+    // 递归的方法
+    public boolean isMatch(String s, String p) {
+        
+        return judge(s, 0, p, 0);
+        
+    }
+    
+    public boolean judge(String s, int si, String p, int pi){
+        
+        if(si == s.length() && pi == p.length()){
+            return true;
+        }
+        
+        if(pi == p.length())
+            return false;
+        
+        if(pi+1 < p.length() && p.charAt(pi+1) == '*'){
+            
+            if(si < s.length() && s.charAt(si) == p.charAt(pi) || si < s.length() && p.charAt(pi) == '.'){
+                return judge(s, si, p, pi+2) || judge(s, si+1, p, pi+2)
+                    || judge(s, si+1, p ,pi);
+            }else{
+                return judge(s, si, p, pi+2);
+            }
+            
+        }
+        
+        if(si < s.length() && s.charAt(si) == p.charAt(pi) || p.charAt(pi) =='.'){
+            return judge(s, si+1, p, pi+1);
+        }
+        
+        return false;
+    }
 }
