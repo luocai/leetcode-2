@@ -15,6 +15,41 @@ public class lc32 {
         System.out.println(longestValidParentheses2("()(())"));
     }
 
+    //dp  从后往前   
+    // 状态定义  dp[i] 表示从 i 到 结尾的最长有效括号
+    public int longestValidParentheses(String s) {
+        
+        if(s.length() == 0)
+            return 0;
+        
+        //dp[i] 表示 从 i 到 s.length-1 的最长有效括号
+        int[] dp = new int[s.length()];
+        int max = 0;
+        
+        for(int i = s.length() - 2; i >= 0; i--){
+            
+            // dp[i+1]表示前一位的最长有效括号数, endIn 表示它 对应的另一半 （。。。。）
+            int endIn = i + 1 + dp[i+1];
+            
+            if(endIn < s.length() && s.charAt(i) == '(' && s.charAt(endIn) == ')'){
+                dp[i] = dp[i+1] + 2;
+                
+                //合并后面的， 因为中间可能有个 ) 把他们隔开了，如果这个匹配了，就可以合并后面的
+                if(endIn + 1 < s.length()){
+                    dp[i] += dp[endIn+1];
+                }
+                
+                if(dp[i] > max)
+                    max = dp[i];
+            }
+            
+        }
+        return max;
+    }
+    
+    
+    //dp从前往后
+    // 偏复杂
     public static int longestValidParentheses(String s) {
         if(s.length()==0)
             return 0;
