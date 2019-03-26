@@ -8,14 +8,26 @@ package code;
  * Tips：
  */
 public class lc35 {
+    
+    //二分，注意 判断条件的等号，别忘啦
     public int searchInsert(int[] nums, int target) {
-        int left = 0, right = nums.length-1;
-        while(left<=right){
-            int mid = (left + right)/2;
-            if(nums[mid]==target) return mid;
-            else if(nums[mid]<target) left = mid+1;
-            else right = mid-1;
+        
+        int l = 0, r = nums.length-1;
+        
+        while(l <= r){
+            int m = (l +r) / 2;
+            
+            if(nums[m] > target){
+                r = m-1;
+            }else if(nums[m] < target){
+                l = m+1;
+            }else{
+                return m;
+            }
         }
-        return left;
+        
+        
+        return l;
+        
     }
 }
