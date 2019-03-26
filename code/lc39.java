@@ -18,24 +18,34 @@ public class lc39 {
         int target = 7;
         System.out.println(combinationSum(candidates, target).toString());
     }
-    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
-        if(candidates.length==0||target==0)
-            return res;
-        List<Integer> l = new ArrayList<Integer>();
-        backtracking(res,candidates,target,l,0,0);
-        return res;
+    
+    //回溯法
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        
+		List<List<Integer>> result = new ArrayList();
+		Arrays.sort(candidates);
+		
+		solve(result, new ArrayList<>(), 0,candidates, 0,target);
+		
+		return result;
     }
-
-    public static void backtracking(List<List<Integer>> res, int[] candidates, int target, List<Integer> l, int sum, int start){
-        for (int i = start; i < candidates.length; i++) {
-            l.add(candidates[i]);
-            if(sum+candidates[i]==target) {
-                res.add(new ArrayList<>(l));//new 新的 List
-            } else if(sum+candidates[i]<target){
-                backtracking(res, candidates, target, l, sum+candidates[i],i);
-            }
-            l.remove((Integer)candidates[i]);
-        }
-    }
+	
+    //回溯
+	public void solve(List<List<Integer>> result,List<Integer> res,int sum,int [] canditates,int index, int target){
+		
+		if(sum == target){
+			result.add(new ArrayList<Integer>(res)); //记得要new一个
+			return;
+		}
+		
+		if(sum > target || index >= canditates.length || canditates[index] > target){
+			return;
+		}
+		
+		res.add(canditates[index]);  // 选
+		solve(result, res, sum+canditates[index],canditates, index, target);
+		res.remove(res.size()-1);   // 不选
+		solve(result, res, sum, canditates, index+1, target);
+		
+	}
 }
