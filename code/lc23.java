@@ -20,17 +20,15 @@ public class lc23 {
         ListNode(int x) { val = x; }
     }
 
-    public ListNode mergeKLists(ListNode[] lists) {
+   //思路，用一个小顶堆来存 优先队列
+    //每次取出小顶堆链表最小的那个， 然后该链表向前走一格， 然后再放回去
+    //复杂度
+   public ListNode mergeKLists(ListNode[] lists) {
         if (lists==null||lists.length==0) return null;
         PriorityQueue<ListNode> pr = new PriorityQueue<ListNode>(lists.length,new Comparator<ListNode>(){
             @Override
             public int compare(ListNode o1,ListNode o2){
-                if (o1.val<o2.val)
-                    return -1;
-                else if (o1.val==o2.val)
-                    return 0;
-                else
-                    return 1;
+                return o1.val - o2.val;
             }
         });
         for (ListNode l:lists) {
@@ -47,7 +45,8 @@ public class lc23 {
         }
         return head.next;
     }
-
+        
+    //归并排序的思路
     public ListNode mergeKLists2(ListNode[] lists) {
         if (lists==null||lists.length==0) return null;
         return Partition(lists,0,lists.length-1);
