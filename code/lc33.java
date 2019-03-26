@@ -15,29 +15,32 @@ public class lc33 {
         System.out.println(search(nums, 3));
     }
 
-    public static int search(int[] nums, int target) {
-        int start = 0;
-        int end = nums.length-1;
-        while(start<=end){
-            if(start==end){
-                if(nums[start]==target)
-                    return start;
-                return -1;
-            }
-            int mid = (start+end)/2;
+   //二分
+   // 分为左边有序、右边有序
+   public static int search(int[] nums, int target) {
+        int l = 0;
+        int r = nums.length-1;
+        while(l<r){
+           
+            int mid = (l+r)/2;
             if(target == nums[mid])
                 return mid;
-            if(nums[mid]>nums[end]){//左边是有序的
-                if(nums[start]<=target && target<=nums[mid])
-                    end = mid-1;
+            
+            if(nums[mid]>nums[r]){//左边是有序的
+                if(nums[l]<=target && target<=nums[mid])
+                    r = mid-1;
                 else
-                    start = mid+1;
+                    l = mid+1;
             }else{//右边是有序的
-                if(nums[mid]<=target && target<=nums[end])
-                    start = mid+1;
+                if(nums[mid]<=target && target<=nums[r])
+                    l = mid+1;
                 else
-                    end =mid-1;
+                    r =mid-1;
             }
+        }
+         
+       if(l==r && nums[l]==target){
+           return l;
         }
         return -1;
     }
