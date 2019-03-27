@@ -16,33 +16,52 @@ public class lc42 {
         System.out.println(trap(height));
         System.out.println(trap2(height));
     }
-    public static int trap(int[] height) {
-        if(height.length<3)
-            return 0;
-        int left = 0;
-        int right = height.length-1;
-        int res =0;
-
-        while(left<right){
-            if(height[left]<height[right]){
-                int edge_l = height[left];
-                left++;
-                while(height[left]<edge_l && left<right){
-                    if(edge_l-height[left]>0)
-                        res += edge_l-height[left];
-                    left++;
-                }
-            }else if(height[left]>=height[right] && left<right){
-                int edge_r = height[right];
-                right--;
-                while(height[right]<edge_r){
-                    if(edge_r-height[right]>0)
-                        res += edge_r-height[right];
-                    right--;
-                }
+    
+   //思路 先找到最大的柱子，然后以此为界， 分别计算左边和右边的
+    // 以计算左边为例： 当 当前高度比left指针高的时候，意味着 要更新left的值了
+    // 否则 就把这个格子的容量算上，因为 left挡住了左边，而最高点又在右边，保证可以装水
+    public int trap(int[] height) {
+        
+        
+        int maxIndex = 0; 
+        int max = 0;
+        int res = 0;
+        
+        //先找最高点
+        for(int i = 0;i  < height.length;i++){
+            if(max < height[i]){
+                max = height[i];
+                maxIndex = i;
             }
         }
+        
+        int left = 0;
+        
+        //计算左边的容量
+        for(int i = 0;i < maxIndex;i++){
+            
+            if(left > height[i]){
+                res = res + (left-height[i]);
+            }else{
+                left = height[i];
+            }
+            
+        }
+        
+        //计算右边的容量
+        int right = 0;
+        for(int i = height.length-1; i > maxIndex;i--){
+            
+            if(right > height[i]){
+                res = res + (right-height[i]);
+            }else{
+                right = height[i];
+            }
+            
+        }
+        
         return res;
+        
     }
 
     public static int trap2(int[] A) {
