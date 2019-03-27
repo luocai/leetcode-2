@@ -12,6 +12,8 @@ public class lc55 {
         int[] arr = {3,2,1,0,4};
         System.out.println(canJump(arr));
     }
+    
+    // 贪心 每次找个能满足的，然后更新目的地
     public static boolean canJump(int[] nums) {
         int des = nums.length-1;
         for (int i = nums.length-1 ; i >=0 ; i--) {
