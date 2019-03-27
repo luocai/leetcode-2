@@ -14,29 +14,46 @@ public class lc48 {
         System.out.println();
         printArr(matrix);
     }
-    public static void rotate(int[][] matrix) {
-        for (int i = 0; i <matrix.length ; i++) {
-            for (int j = 0; j < i; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = temp;
-            }
-        }
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j <matrix[0].length/2; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[i][matrix[0].length-1-j];
-                matrix[i][matrix[0].length-1-j] = temp;
-            }
-        }
-    }
-
-    public static void printArr(int[][] matrix){
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(matrix[i][j]);
-            }
-            System.out.println();
-        }
+    public void rotate(int[][] matrix) {
+        
+		//用十字架的方式思考，先把十字架转180 ，在 左对角线 取对称。到90 度的位置
+		//先转180度
+		
+		if(matrix == null && matrix.length == 0)
+			return;
+		
+        //先转180 度    matrix[i][j] = matrix[matrix.length - i - 1][j];
+		for(int i = 0; i < matrix.length / 2;i++){
+			
+			for(int j = 0; j < matrix[i].length ; j++ ){
+				int temp = matrix[i][j];
+				matrix[i][j] = matrix[matrix.length - i - 1][j];
+				matrix[matrix.length-i-1][j] = temp;
+			}
+		}
+		
+//		for(int i = 0; i < matrix.length;i++){
+//			for(int j = 0; j < matrix[i].length; j++){
+//				System.out.print(matrix[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+//		
+		//左对角线对称  matrix[i][j] = matrix[j][i];
+		for(int i = 0; i < matrix.length; i++){
+			for(int j = i+1; j < matrix[0].length; j++){
+				int temp = matrix[i][j];
+				matrix[i][j] = matrix[j][i];
+				matrix[j][i] = temp;
+			}
+		}
+//		System.out.println();
+//		for(int i = 0; i < matrix.length;i++){
+//			for(int j = 0; j < matrix[i].length; j++){
+//				System.out.print(matrix[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+		
     }
 }
