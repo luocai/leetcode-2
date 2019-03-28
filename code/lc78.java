@@ -15,6 +15,33 @@ public class lc78 {
         int[] nums= {1,2,3};
         System.out.println(subsets(nums).toString());
     }
+    
+    // 回溯法
+    List<List<Integer>> res = new ArrayList();
+    List<Integer> tres = new ArrayList();
+    
+    public List<List<Integer>> subsets(int[] nums) {
+        res.add(tres);
+        tracing(nums, 0);
+        return res;
+    }
+    
+    public void tracing(int[] nums, int s){
+        
+        if(s == nums.length)
+            return;
+        
+        for(int i = s; i < nums.length; i++){
+            // 选，然后不选
+            tres.add(nums[i]);
+            res.add(new ArrayList(tres));
+            tracing(nums, i+1);
+            tres.remove((Integer)nums[i]); // 注意 （Integer）
+        }
+        
+    }
+    
+    
     public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         res.add(new ArrayList<>());
