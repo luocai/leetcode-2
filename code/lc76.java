@@ -15,45 +15,54 @@ public class lc76 {
     public static void main(String[] args) {
         System.out.println(minWindow("ADOBECODEBANC","ABC"));
     }
-    public static String minWindow(String s, String t) {
-        HashMap<Character,Integer> mp = new HashMap();
-        for (int i = 0; i < t.length() ; i++) { //统计每个字符出现的个数
-            char ch = t.charAt(i);
-            if(mp.containsKey(ch))
-                mp.put(ch,mp.get(ch)+1);
-            else
-                mp.put(t.charAt(i),1);
+     // 滑动窗口模型
+    // 思路：右指针一直往前走，直到遇到所有字符匹配成功
+    // 匹配成功后 左指针向前走，然后继续上面的操作
+    public String minWindow(String s, String t) {
+        
+        Map<Character, Integer> map = new HashMap();
+        
+        // 统计 t中每个字符出现的次数
+        for(int i = 0; i < t.length() ;i++){
+            if(map.containsKey(t.charAt(i))){
+                map.put(t.charAt(i), map.get(t.charAt(i))+1);
+            }else{
+                map.put(t.charAt(i), 1);
+            }
         }
-        int right = 0;
-        int left = 0;
-        int count = 0;
-        int res_left = 0;
-        int res_len = s.length()+1;
-        while(right<s.length()){
-            // 移动右指针,到能够覆盖t
-            char ch_r = s.charAt(right);
-            if(mp.containsKey(ch_r)){
-                mp.put(ch_r,mp.get(ch_r)-1);
-                if(mp.get(ch_r)>=0) // <0说明重复了
+        
+        int left = 0, right = 0;  // 窗口的左右指针
+        int res_left = 0 , res_len = s.length() + 1; // 最短子串结果的左指针， 长度
+        int count = 0; // 当前匹配了多少个字符
+        while(right < s.length()){
+            char c =s.charAt(right);
+            
+            if(map.containsKey(c)){
+                map.put(c, map.get(c)-1); // 使用了一次就次数减一
+                if(map.get(c) >= 0) // 这个等号很关键
                     count++;
             }
-            while(count==t.length()){//右移左指针
-                if(right-left+1<res_len){ //更新结果
+            
+            while(count == t.length()){
+                if(right - left + 1  < res_len) // 更新res
+                {
+                    res_len = right - left + 1;
                     res_left = left;
-                    res_len = right-left+1;
                 }
-                char ch_l = s.charAt(left);
-                if(mp.containsKey(ch_l)){
-                    mp.put(ch_l,mp.get(ch_l)+1);
-                    if(mp.get(ch_l)>0)
-                        count--;
+                char tc = s.charAt(left);
+                
+                if(map.containsKey(tc)){
+                    map.put(tc, map.get(tc)+1); // 该字符不用了，放回去
+                    if(map.get(tc) > 0)
+                        count--; // 匹配数也要减一， 然后会跳出循环..
                 }
                 left++;
             }
             right++;
         }
-        if(res_len==s.length()+1)
+        if(res_len == s.length()+1)
             return "";
-        return s.substring(res_left,res_left+res_len);
+        
+        return s.substring(res_left, res_left+ res_len);
     }
 }
