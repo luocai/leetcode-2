@@ -11,6 +11,9 @@ public class lc64 {
         int[][] grid = {{1,3,1},{1,5,1},{4,2,1}};
         System.out.println(minPathSum(grid));
     }
+    
+    //dp  dp[i][j] 表示 （0,0）到（i,j）的最小值
+    // dp[i][j] = min(dp[i-1][j],dp[i][j-1])+ grid[i][j]
     public static int minPathSum(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
