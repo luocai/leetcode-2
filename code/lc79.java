@@ -14,30 +14,40 @@ public class lc79 {
         System.out.println(exist(board,"SEE"));
     }
 
-    public static boolean exist(char[][] board, String word) {
-        if(board.length==0)
-            return false;
-        boolean [][] flag = new boolean[board.length][board[0].length];
-        for (int i = 0; i < board.length ; i++) {
-            for (int j = 0; j < board[0].length ; j++) {
-                if(search(board,word,i,j,0,flag))
+     //典型的回溯法 
+    public boolean exist(char[][] board, String word) {
+        
+        //访问位
+        boolean[][] flag = new boolean[board.length][board[0].length];
+        
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board[0].length; j++){
+                if(judge(board, word, i,j,0,flag))
                     return true;
             }
         }
-        return false;
+     
+     return false;   
+        
     }
-
-    public static boolean search(char[][] board, String word, int i, int j, int sum, boolean[][] flag){
-        if(sum==word.length())
+    
+    public boolean judge(char[][] board, String word, int i, int j,int index,boolean[][] flag){
+        
+        if(index == word.length())
             return true;
-        if(i<0||j<0||i>=board.length||j>=board[0].length)
+        
+        if(i < 0 || i >= board.length || j < 0 || j >= board[0].length || flag[i][j] == true || board[i][j] != word.charAt(index)){
             return false;
-        if(board[i][j]!=word.charAt(sum)||flag[i][j]==true)
-            return false;
+        }
+        
+        
+        //设置访问 ， 访问结束后要释放
         flag[i][j] = true;
-        sum++;
-        boolean r = search(board, word, i, j+1, sum, flag)  || search(board, word, i, j-1, sum, flag) || search(board, word, i+1, j, sum, flag) ||search(board, word, i-1, j, sum, flag);
+        index++;
+        boolean res = judge(board, word, i+1, j, index, flag) || judge(board,word, i-1, j, index , flag) || judge(board, word, i,j+1, index, flag) || judge(board, word, i, j-1, index, flag);
         flag[i][j] = false;
-        return r;
+        
+        return res;
+        
     }
 }
