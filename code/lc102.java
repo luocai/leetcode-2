@@ -18,27 +18,35 @@ public class lc102 {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        Queue<TreeNode> qu = new LinkedList<>();
-        List<List<Integer>> res = new ArrayList<>();
-        if(root==null)
+        List<List<Integer>> res = new ArrayList();
+        
+        if(root == null)
             return res;
-        qu.add(root);
-        while(!qu.isEmpty()){
-            int size = qu.size();
-            List<Integer> temp = new ArrayList<>();
-            while(size>0){
-                TreeNode tn = qu.remove();
-                if(tn!=null) {
-                    if(tn.left!=null)
-                        qu.add(tn.left);
-                    if(tn.right!=null)
-                        qu.add(tn.right);
-                }
-                temp.add(tn.val);
-                size--;
+        LinkedList<TreeNode> queue = new LinkedList();
+        
+        queue.add(root);
+        int size = 1;
+        List<Integer> tres = new ArrayList();
+        
+        while(!queue.isEmpty()){
+            TreeNode node = queue.poll();
+            size--;
+            tres.add(node.val);
+            if(node.left != null){
+                queue.add(node.left);
             }
-            res.add(temp);
+            if(node.right != null){
+                queue.add(node.right);
+            }
+            if(size == 0){
+                
+                res.add(tres);
+                tres = new ArrayList();
+                size = queue.size();
+            }
+            
         }
+        
         return res;
     }
 }
