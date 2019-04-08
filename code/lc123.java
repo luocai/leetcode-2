@@ -10,32 +10,39 @@ package code;
  *      lc121, lc309, lc188, lc123, lc714
  */
 public class lc123 {
+    
+    // 分为两部分  0..i   i...n ，每一部分可以转换成
     public int maxProfit(int[] prices) {
-        int buy1 = Integer.MAX_VALUE, buy2 = Integer.MAX_VALUE, sell1 = 0, sell2 = 0;
-        for (int i = 0; i < prices.length ; i++) {
-            buy1 = Math.min(buy1, prices[i]);   //第一次购买的最低价格
-            sell1 = Math.max(sell1, prices[i] - buy1);
-            buy2 = Math.min(buy2, prices[i]-sell1); //记住第二项 prices[i]-sell1
-            sell2 = Math.max(sell2, prices[i]-buy2);    //当只购买一次时，会传递的
-        }
-        return sell2;
+        
+		if(prices == null || prices.length == 0){
+			return 0;
+		}
+		int maxp = 0;
+		for(int i = 0; i < prices.length ;i++){
+			
+			maxp = Math.max(maxp,solution(prices,0,i)+solution(prices,i, prices.length));
+		}
+		
+		return maxp;
     }
 
-    public int maxProfit2(int[] prices) {   //常规方法，分为两块，O(N^2)
-        int res = 0;
-        for (int i = 0; i <prices.length ; i++) {
-            int res1 = Math.max(0, helper(prices,0,i));
-            int res2 = Math.max(0, helper(prices, i, prices.length));
-            res = Math.max(res, res1+res2);
-        }
-        return res;
-    }
-    public int helper(int[] prices, int begin, int end) {
-        int min = Integer.MAX_VALUE, res=0;
-        for(int i=begin; i<end; i++){
-            min = Math.min(min, prices[i]);
-            res = Math.max(res, prices[i]-min);
-        }
-        return res;
-    }
+	public int solution(int[] prices, int i, int j){
+		
+		int pre = prices[i];
+		int profit = 0;
+		for(int x = i+1; x< j;x++){
+			
+			if(prices[x] < pre ){
+				pre = prices[x];
+			}
+			
+			if(prices[x] - pre > profit){
+				profit = prices[x] - pre;
+			}
+			
+		}
+		
+		return profit;
+	}
+	
 }
