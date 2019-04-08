@@ -14,18 +14,32 @@ public class lc114 {
         TreeNode right;
         TreeNode(int x) { val = x; }
     }
+    //注意思路
     public void flatten(TreeNode root) {
-        if(root==null)
+        
+        if(root == null)
             return;
-        flatten(root.left);
-        flatten(root.right);
-        TreeNode origin_r = root.right;
-        root.right = root.left;     //右节点替换为左节点
-        TreeNode right_leaf = root;
-        while(right_leaf.right!=null){      //右节点遍历到最后，把左节点接上
-            right_leaf = right_leaf.right;
+        
+        if(root.left != null){
+            flatten(root.left);
         }
-        right_leaf.right = origin_r;
-        root.left = null;       //别忘了把left设成null
+        
+        if(root.right != null){
+            flatten(root.right);
+        }
+        
+        TreeNode node = root.right; //暂时保存右子树
+        root.right = root.left; // 把左子树变成右子树
+        root.left = null;
+        
+        // 刚接上的右子树一直向右走
+        while(root.right != null){
+            root = root.right;
+        }
+        
+        //指向原来的右节点
+        root.right = node;
+        root.left = null;
+        
     }
 }
