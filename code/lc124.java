@@ -15,17 +15,36 @@ public class lc124 {
         TreeNode right;
         TreeNode(int x) { val = x; }
     }
-    int res = Integer.MIN_VALUE;      //可能小于0
+    
+    
+     /**
+    对于任意一个节点, 如果最大和路径包含该节点, 那么只可能是两种情况:
+    1. 其左右子树中所构成的和路径值较大的那个加上该节点的值后向父节点回溯构成最大路径
+    2. 左右子树都在最大路径中, 加上该节点的值构成了最终的最大路径
+    **/
+    int res = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
-        dfs(root);
+        
+        solution(root);
+        
         return res;
     }
-    public int dfs(TreeNode root){
-        if(root==null)
+    
+    public int solution(TreeNode root){
+        
+        if(root == null)
             return 0;
-        int left = Math.max(dfs(root.left),0);
-        int right = Math.max(dfs(root.right),0);
-        res = Math.max(res, left+right+root.val);   //该节点是路径上的最高层节点
-        return Math.max(left,right)+root.val;
+        
+        int left = Math.max(0,solution(root.left)); // 如果左右为负，那么路径不包括他们
+        int right = Math.max(0,solution(root.right));
+        
+        //左右子树都在最大路径中, 加上该节点的值构成了最终的最大路径
+        res = Math.max(res, root.val + left+right); //该节点是路径上的最高层节点
+        
+        // 其左右子树中所构成的和路径值较大的那个加上该节点的值后向父节点回溯构成最大路径
+        return root.val + Math.max(left, right);
+        
     }
+    
+
 }
