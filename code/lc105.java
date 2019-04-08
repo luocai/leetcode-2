@@ -20,21 +20,35 @@ public class lc105 {
         int[] inorder = {9,3,15,20,7};
         buildTree(preorder,inorder);
     }
-    public static TreeNode buildTree(int[] preorder, int[] inorder) {
-        return recursion(preorder, inorder, 0, 0, inorder.length-1);
+    
+    // 常规
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        
+        return solution(preorder, 0, inorder, 0, inorder.length-1);
     }
-    public static TreeNode recursion(int[] preorder, int[] inorder, int pre_index, int start, int end){   //start,end代表在inorder上搜索的范围
-        if(start>end || start >inorder.length)
+    
+    public TreeNode solution(int[] pre, int index, int[] in, int is, int ie){
+        
+        //注意边界条件
+        if(index == pre.length || is > ie){
             return null;
-        TreeNode tn = new TreeNode(preorder[pre_index]);
-        int in_index = 0;
-        for (int i = 0; i <= end; i++) {
-            if(preorder[pre_index]==inorder[i])
-                in_index = i;
         }
-        tn.left = recursion(preorder, inorder, pre_index+1, start, in_index-1);
-        tn.right = recursion(preorder, inorder, pre_index+in_index-start+1, in_index+1, end);   //注意右孩子节点index参数
-        return tn;      //记住函数的返回值的设置，返回Node，递归的构造子树
+        
+        TreeNode node = new TreeNode(pre[index]);
+        
+        //找到在中序数组中根节点的位置
+        int mark = 0;
+        for(int i = is;i <= ie; i++){
+            if(pre[index] == in[i]){
+                break;
+            }else{
+                mark++;
+            }
+        }
+        
+        node.left = solution(pre, index+1, in, is, is+mark-1);
+        node.right = solution(pre, index+mark+1, in, is+mark+1, ie);
+        
+        return node;
     }
-
 }
