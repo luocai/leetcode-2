@@ -16,26 +16,38 @@ public class lc128 {
         int[] nums = {100, 4, 200, 1, 3, 2};
         System.out.println(longestConsecutive(nums));
     }
-    public static int longestConsecutive(int[] nums) {
-        Set<Integer> s = new HashSet();
-        for(int i:nums) s.add(i);
-        int max_len = 0;
-        for(int i:nums) {
-            if(s.contains(i)){
-                s.remove((Integer)i);
-                int left = i-1;
-                while(s.contains(left)){
-                    s.remove((Integer)left);
-                    left--;
-                }
-                int right = i+1;
-                while(s.contains(right)){
-                    s.remove((Integer)right);
-                    right++;
-                }
-                max_len = Math.max(right-left-1, max_len);
-            }
+    /*
+    * 将所有的元素装入hash Set
+    * 遍历元素 如果（前一个数不在set）中 往后找最大序列的长度
+    * 如果不是lower Bound 跳过即可。
+    * 这样每个元素只会变访问两次 
+    */
+    public int longestConsecutive(int[] nums) {
+        
+        Set<Integer> set = new HashSet();
+        int res = 0;
+        for(int i = 0; i< nums.length; i++){
+            set.add(nums[i]);
         }
-        return max_len;
+        
+        for(int i = 0; i < nums.length;i++){
+            
+            // 如果前一个数不在set中，则往后找最大序列的长度
+            if(!set.contains(nums[i]-1)){
+                
+                int nextNum = nums[i]+1;
+                int count = 1;
+                
+                while(set.contains(nextNum)){
+                    count++;
+                    nextNum++;
+                }
+                if(count > res){
+                    res = count ;
+                }
+            }
+            
+        }
+        return res;
     }
 }
