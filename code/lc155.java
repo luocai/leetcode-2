@@ -9,36 +9,38 @@ package code;
  */
 import java.util.Stack;
 
-public class lc155 {
-    class MinStack {
-        Stack<Integer> st;
-        int min = Integer.MAX_VALUE;
-        /** initialize your data structure here. */
-        public MinStack() {
-            this.st = new Stack<Integer>();
-        }
+class MinStack {
+    
+    LinkedList<Integer> stack ;
+    int min = Integer.MAX_VALUE;
 
-        public void push(int x) {
-            if(x<=min){     //别忘了=
-                st.push(this.min);
-                this.min = x;
-            }
-            st.push(x);
+    /** initialize your data structure here. */
+    public MinStack() {
+        stack = new LinkedList();
+    }
+ 
+    public void push(int x) {
+        //记录上一个最小值， 如果当前最小值被弹出了，可以找到第二小的值
+        if(x <= min){
+            stack.push(min);
+            this.min = x;
         }
-
-        public void pop() {
-            int x = st.pop();
-            if(x==this.min){
-                this.min = st.pop();
-            }
+        stack.push(x);
+       
+    }
+    
+    public void pop() {
+        int x = stack.pop();
+        if( x == min){
+            min = stack.pop(); // 记录了第二小的值，可以直接拿到
         }
-
-        public int top() {
-            return st.peek();
-        }
-
-        public int getMin() {
-            return this.min;
-        }
+    }
+    
+    public int top() {
+        return stack.peek();
+    }
+    
+    public int getMin() {
+        return min;
     }
 }
