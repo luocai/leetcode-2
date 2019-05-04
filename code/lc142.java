@@ -13,23 +13,30 @@ public class lc142 {
         ListNode next;
         ListNode(int x) { val = x; }
     }
-    public ListNode detectCycle(ListNode head) {
-        if(head==null)
+    
+    // 一旦快慢指针相遇，说明有环，这时候 让慢指针回到原点，然后两个指针以相同速度前进，直到回合
+     public ListNode detectCycle(ListNode head) {
+        if(head == null)
             return null;
+        
         ListNode slow = head;
         ListNode fast = head;
-        ListNode slow2 = head;
-        while( fast.next!=null && fast.next.next!=null ){
+        
+        while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
-            if(slow==fast){
-                while(slow2!=slow){
+            
+            if(fast == slow){
+                slow = head;
+                
+                while(slow != fast){
                     slow = slow.next;
-                    slow2 = slow2.next;
+                    fast = fast.next;
                 }
-                return slow2;
+                return slow;
             }
         }
+        
         return null;
     }
 }
