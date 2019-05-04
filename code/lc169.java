@@ -8,6 +8,8 @@ package code;
  * Tips：之所以能够 O(n), O(1) 是因为题目已经给定了数组中一定能找到这个数，该方法充分利用了这一点
  */
 public class lc169 {
+    //从第一个数开始count=1，遇到相同的就加1，遇到不同的就减1，减到0就重新换个数开始计数，总能找到最多的那个
+    // 摩尔投票法
     public int majorityElement(int[] nums) {
         int res = nums[0];
         int count = 1;
