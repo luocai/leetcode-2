@@ -14,25 +14,38 @@ public class lc206 {
         ListNode(int x) { val = x; }
     }
 
-    public ListNode reverseList(ListNode head) {
-        ListNode newHead = null;    //头节点变成尾节点，最后要指向null
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = newHead;
-            newHead = head;
-            head = next;
+    // 三个指针
+     public ListNode reverseList(ListNode head) {
+        if(head == null)
+            return head;
+        
+        ListNode pre = null, p = head, q = head.next;
+        while(q != null){
+            p.next = pre;
+            pre = p;
+            p = q;
+            q = q.next;
         }
-        return newHead;
+        p.next = pre;
+        return p;
     }
 
-    public ListNode reverseList2(ListNode head) {   //递归
-        return reverseListInt(head, null);
+    
+   // 递归
+   public ListNode reverseList(ListNode head) {
+        return solution(null, head);
     }
-    private ListNode reverseListInt(ListNode head, ListNode newHead) {
-        if (head == null)
-            return newHead;
-        ListNode next = head.next;
-        head.next = newHead;
-        return reverseListInt(next, head);  //尾递归，操作已经完成，最后返回最后结果罢了
+    
+    public ListNode solution(ListNode pre, ListNode cur){
+        if(cur == null)
+            return pre;
+        
+         ListNode next = cur.next;
+    
+         cur.next = pre;
+         pre = cur;
+         cur = next;
+
+         return solution(pre,cur);
     }
 }
