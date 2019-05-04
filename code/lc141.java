@@ -13,17 +13,23 @@ public class lc141 {
         ListNode next;
         ListNode(int x) { val = x; }
     }
-    public boolean hasCycle(ListNode head) {
-        if(head==null)
+        
+   public boolean hasCycle(ListNode head) {
+        if(head == null)
             return false;
-        ListNode faster = head;
         ListNode slow = head;
-        while( faster.next!=null && faster.next.next!=null){    //注意判断条件，slow一定不等于null，不用判断了
-            slow = slow.next;
-            faster = faster.next.next;
-            if(slow==faster)
+        ListNode fast = head.next;
+        
+        while(fast != null && fast.next != null){
+            
+            if(fast == slow){
                 return true;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+           
         }
+        
         return false;
     }
 }
