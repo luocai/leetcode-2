@@ -15,41 +15,51 @@ public class lc148 {
     }
 
     public ListNode sortList(ListNode head) {
-        if( head==null || head.next == null ){
+        
+        if(head == null || head.next == null)
             return head;
-        }
-        ListNode slow = head;
-        ListNode fast = head.next;
-        while( fast.next!=null && fast.next.next!=null ){   //把链表分成两半
+        
+        ListNode slow = head, fast = head,pre = null;
+        //链表拆两半
+        while(fast!= null && fast.next != null){
+            pre = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
-        ListNode l2 = sortList(slow.next);
-        slow.next = null;
+        //断开
+        pre.next = null;
+        
         ListNode l1 = sortList(head);
-        return mergeList(l1, l2);
+        ListNode l2 = sortList(slow);
+        
+        return merge(l1,l2);
     }
-
-    public ListNode mergeList(ListNode l1, ListNode l2){
+    
+    public ListNode merge(ListNode left, ListNode right){
+        //这个技巧
         ListNode res = new ListNode(0);
-        ListNode head = res;
-        while( l1!=null && l2!=null ){
-            if(l1.val<l2.val){
-                res.next = l1;
-                l1 = l1.next;
-                res = res.next;
+        ListNode cur = res;
+        
+        while(left != null & right != null){
+            
+            if(left.val < right.val){
+                cur.next = left;
+                cur = cur.next;
+                left = left.next;
             }else{
-                res.next = l2;
-                l2 = l2.next;
-                res = res.next;
+                cur.next = right;
+                cur = cur.next;
+                right = right.next;
             }
+            
         }
-        if(l1!=null){
-            res.next = l1;
+        //和数组的差别，这里是if
+        if(left != null){
+            cur.next = left;
         }
-        if(l2!=null){
-            res.next = l2;
+        if(right != null){
+            cur.next = right;
         }
-        return head.next;
+        return res.next;
     }
 }
