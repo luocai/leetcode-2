@@ -9,77 +9,77 @@ package code;
  */
 import java.util.HashMap;
 
-public class lc146 {
-    class Node {
-        int key;
-        int value;
-        Node pre;
-        Node next;
+class Node {
+    int key;
+    int value;
+    Node pre;
+    Node next;
 
-        public Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
+    public Node(int key, int value) {
+        this.key = key;
+        this.value = value;
     }
-    public class LRUCache {
+}
+public class LRUCache {
 
-        HashMap<Integer, Node> map;
-        int capicity, count;
-        Node head, tail;
+    HashMap<Integer, Node> map;
+    int capicity, count;
+    Node head, tail;  // map + 双向链表
 
-        public LRUCache(int capacity) {
-            this.capicity = capacity;
-            map = new HashMap<>();
-            head = new Node(0, 0);
-            tail = new Node(0, 0);
-            head.next = tail;
-            tail.pre = head;
-            head.pre = null;
-            tail.next = null;
-            count = 0;
+    public LRUCache(int capacity) {
+        this.capicity = capacity;
+        map = new HashMap<>();
+        head = new Node(0, 0); // 首尾节点，不存储数据
+        tail = new Node(0, 0);
+        head.next = tail;
+        tail.pre = head;
+        head.pre = null;
+        tail.next = null;
+        count = 0;
+    }
+
+    public void deleteNode(Node node) {
+        node.pre.next = node.next;
+        node.next.pre = node.pre;
+    }
+
+    public void addToHead(Node node) {
+        node.next = head.next;
+        node.next.pre = node;
+        node.pre = head;
+        head.next = node;
+    }
+
+    public int get(int key) {
+        if (map.get(key) != null) {
+            Node node = map.get(key);
+            int result = node.value;
+            deleteNode(node);
+            addToHead(node);
+            return result;
         }
+        return -1;
+    }
 
-        public void deleteNode(Node node) {
-            node.pre.next = node.next;
-            node.next.pre = node.pre;
-        }
-
-        public void addToHead(Node node) {
-            node.next = head.next;
-            node.next.pre = node;
-            node.pre = head;
-            head.next = node;
-        }
-
-        public int get(int key) {
-            if (map.get(key) != null) {
-                Node node = map.get(key);
-                int result = node.value;
-                deleteNode(node);
-                addToHead(node);
-                return result;
-            }
-            return -1;
-        }
-
-        public void put(int key, int value) {
-            if (map.get(key) != null) {
-                Node node = map.get(key);
-                node.value = value;
-                deleteNode(node);
+    public void put(int key, int value) {
+        //如果有该点，则取出，然后修改，并放到首部如果有，则取出，然后修改，并放到首部
+        if (map.get(key) != null) {
+            Node node = map.get(key);
+            node.value = value;
+            deleteNode(node);
+            addToHead(node);
+        } else { // 如果有，则取出，然后修改，并放到首部
+            Node node = new Node(key, value);
+            map.put(key, node);
+            if (count < capicity) { // 判断容量
+                count++;
                 addToHead(node);
             } else {
-                Node node = new Node(key, value);
-                map.put(key, node);
-                if (count < capicity) {
-                    count++;
-                    addToHead(node);
-                } else {
-                    map.remove(tail.pre.key);
-                    deleteNode(tail.pre);
-                    addToHead(node);
-                }
+                map.remove(tail.pre.key);
+                deleteNode(tail.pre);
+                addToHead(node);
             }
         }
     }
 }
+
