@@ -13,21 +13,44 @@ public class lc160 {
         ListNode next;
         ListNode(int x) { val = x; }
     }
+    // 让一个先走 两个链表的差值，再一起走
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if(headA==null||headB==null)
+        //若两链表有一个为空，都不可能相交，输出为null
+        if(headA == null || headB == null)
             return null;
-        ListNode curA = headA;
-        ListNode curB = headB;
-        while (curA != curB) {
-            if(curA == null)
-                curA = headB;
-            if(curB == null)
-                curB = headA;
-            if(curA==curB)
-                return curA;    //别忘了判断一下是否相等
-            curA = curA.next;
-            curB = curB.next;
+        
+        // 分别计算两个链表的长度
+        int la =getLen(headA);
+        int lb =getLen(headB);
+        
+        // 让长的先走 abs(la-lb) ， 然后再一起走
+        if(la < lb){
+            for(int i = 0; i < lb-la; i++){
+                headB = headB.next;
+            }
+        }else{
+            for(int i = 0;i  < la-lb; i++){
+                headA = headA.next;
+            }
         }
-        return curA;
+        
+        while(headA != null && headB != null){
+             if(headA == headB){
+                return headA;
+            }
+            headA = headA.next;
+            headB = headB.next;
+        }
+        return null;
+    }
+    
+    public int getLen(ListNode list){
+        int len = 0;
+        
+        while(list != null){
+            list = list.next;
+            len++;
+        }
+        return len;
     }
 }
