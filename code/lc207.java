@@ -17,36 +17,49 @@ public class lc207 {
         //System.out.println(canFinish(2, prerequisites));
         System.out.println(canFinish2(2, prerequisites));
     }
-    public static boolean canFinish(int numCourses, int[][] prerequisites) {
-        int[] indegree = new int[numCourses];   //计算入度
-        int[][] graph = new int[numCourses][numCourses];    //邻接矩阵
-        for (int i = 0; i < prerequisites.length ; i++) {
-            int node1 = prerequisites[i][0];
-            int node2 = prerequisites[i][1];
-            graph[node2][node1] = 1;
-            indegree[node1]++;  //存下入度，入度为0时，表示该课程可以修
+    // bfs 拓扑排序
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        //入度
+        int[] indegree = new int[numCourses];
+        int[][] grid = new int[numCourses][numCourses];
+        
+    
+        for(int i = 0; i < prerequisites.length; i++){
+          
+            int s = prerequisites[i][0];
+            int e = prerequisites[i][1];
+            
+            grid[s][e] = 1;
+            indegree[s]++;
         }
-        Stack<Integer> st = new Stack();
-        int count = 0;
-        for (int i = 0; i < numCourses ; i++) {
-            if(indegree[i]==0) {
-                st.add(i);
-                count++;
+        
+        LinkedList<Integer> stack = new LinkedList();
+        
+        // 把入度为0的课程入栈，可以直接学习的课程
+        for(int i = 0; i < numCourses; i++){
+            if(indegree[i] == 0){
+                stack.push(i);
             }
         }
-        while(!st.isEmpty()){
-            int node = st.pop();
-            for (int i = 0; i < numCourses ; i++) {
-                if(graph[node][i]==1) {
+        
+        int count = 0;
+        while(!stack.isEmpty()){
+            int s = stack.pop();
+            count++;
+            //遍历，更新学了s才能学的课程
+            for(int i = 0; i < numCourses; i++){
+                if(grid[i][s] == 1){
+                   
                     indegree[i]--;
-                    if(indegree[i]==0){
-                        st.add(i);
-                        count++;
+                    if(indegree[i] == 0){
+                         stack.push(i);
                     }
                 }
+                
             }
         }
-        return count==numCourses;   //可以修的课程==课程数
+        
+        return count == numCourses;
     }
 
     public static boolean canFinish2(int numCourses, int[][] prerequisites) {
