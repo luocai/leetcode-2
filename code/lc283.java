@@ -8,6 +8,8 @@ package code;
  * Tips：
  */
 public class lc283 {
+    //遍历一遍，遇到不为0的数字，就和左边第一个为0的交换
+    //左边第一个0的左边用 j 表示，不为0 就 
     public void moveZeroes(int[] nums) {
         for (int i = 0, j=0; i < nums.length ; i++) {
             if(nums[i]!=0){
