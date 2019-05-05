@@ -14,6 +14,52 @@ public class lc234 {
         ListNode(int x) { val = x; }
     }
 
+    // 反转后半段就行啦
+    public boolean isPalindrome(ListNode head) {
+        
+        if(head == null || head.next == null)
+            return true;
+        
+        ListNode slow = head, fast = head;
+        
+        while(fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+   
+        ListNode h = reverse(slow.next);
+   
+        //注意截断
+        slow.next = null;
+        while(head != null && h != null){
+            if(head.val != h.val){  
+                 return false;
+            }
+
+            head = head.next;
+            h = h.next;
+        }
+        return true;
+        
+    }
+    
+    public ListNode reverse(ListNode head){
+        
+        if(head == null)
+            return null;
+        ListNode pre = null, p = head, q = head.next;
+        
+        while(q != null){
+            p.next = pre;
+            pre = p;
+            p = q;
+            q = q.next;
+        }
+        p.next = pre;
+        return p;
+    }
+    
+    
     public boolean isPalindrome(ListNode head) {
         if(head==null||head.next==null)
             return true;
