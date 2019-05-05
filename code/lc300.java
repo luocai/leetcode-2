@@ -10,6 +10,36 @@ package code;
 import java.util.Arrays;
 
 public class lc300 {
+    
+    
+    // dp[i]  表示 以 i 结尾的最长上升子序列的长度
+    // dp[i] = max(dp[i], dp[j]+1);
+    public int lengthOfLIS(int[] nums) {
+        if(nums.length == 0)
+            return 0;
+        
+        int[] dp = new int[nums.length];
+        dp[0] = 1;
+        
+        int res = 1;
+        
+        for(int i = 1; i < nums.length; i++){
+            dp[i] = 1;
+            for(int j = 0; j < i; j++){
+                
+                if(nums[j] < nums[i]){
+                    dp[i] = Math.max(dp[i],dp[j]+1);
+                }
+            }
+            if(dp[i] > res)
+                res = dp[i];
+        }
+    
+        return res;
+    }
+    
+    
+    
     public int lengthOfLIS(int[] nums) {
         if(nums.length<2)
             return nums.length;
