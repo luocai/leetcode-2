@@ -20,6 +20,36 @@ public class lc337 {
         TreeNode right;
         TreeNode(int x) { val = x; }
     }
+    
+     // 巧妙
+    //动态规划
+    //思路：
+    //定义一个数组res,长度为2,res[0]表示不抢该节点可获得最大值,res[1]表示抢劫该节点可获得最大值
+    public int rob(TreeNode root) {
+        int[] res = solution(root);
+        return Math.max(res[0],res[1]);
+    }
+    
+    // res[0] 表示不选该点的最大值
+    // res[1] 表示选该点的最大值
+    public int[] solution(TreeNode root){
+        int[] res = new int[2];
+        if(root == null)
+            return res;
+        
+        //对于以r.left为根的树，计算抢劫根节点(r.left)与不抢劫根节点可获得最大金额. left[0]则为不抢r.lrft可获得的最大金额,left[1]则为抢劫r.left可获得的最大金额  以下right[] 分析同理
+        int[] left = solution(root.left);
+        int[] right= solution(root.right);
+        
+        res[0] = Math.max(left[0],left[1]) + Math.max(right[0],right[1]);
+        res[1] = root.val + left[0] + right[0];
+        
+        return res;
+    }
+    
+    
+    
+    
     public int rob(TreeNode root) {
         return helper(root, new HashMap());
     }
