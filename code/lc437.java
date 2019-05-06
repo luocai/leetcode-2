@@ -25,7 +25,37 @@ public class lc437 {
         }
     }
 
+    // 双重递归 
+    int res = 0;
+    public int pathSum(TreeNode root, int sum) {
+        
+        if(root == null)
+            return 0;
+        
+        sum(root, sum);
+        
+        pathSum(root.left, sum);
+        pathSum(root.right, sum);
+        
+        return res;
+    }
+    
+    public void sum(TreeNode root, int sum){
+        
+        if(root == null)
+            return;
+        
+        sum -= root.val;
+        
+        if(sum == 0)
+            res++;
+        
+        sum(root.left, sum);
+        sum(root.right ,sum);
+        
+    }
 
+    //另一种写法
     public static int pathSum(TreeNode root, int sum) { //该节点作为起点
         if (root == null) return 0;
         return dfs(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
