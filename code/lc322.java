@@ -14,6 +14,37 @@ public class lc322 {
     public static void main(String[] args) {
         System.out.println(coinChange(new int[]{2}, 3));
     }
+    
+     //dp[i] 表示兑换金额i最小需要的硬币个数
+    //dp[i] = max(dp[i], dp[i-c]+1)
+    public int coinChange(int[] coins, int amount) {
+        
+        if(amount == 0)
+            return 0;
+        
+        int[] dp = new int[amount+1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        // 如果刚好有硬币，则对应为1
+        for(int i = 0; i < coins.length; i++){
+            if(coins[i] <= amount){
+                dp[coins[i]] = 1;
+            }
+        }
+        dp[0] = 0;
+        
+        for(int i = 1; i <= amount; i++){
+            for(int j = 0; j < coins.length; j++){
+                int c = coins[j];
+                if(i - c >= 0 && dp[i-c] != Integer.MAX_VALUE){
+                    dp[i] = Math.min(dp[i], dp[i-c]+1);
+                }
+            }
+        }
+        
+        return  dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+    }
+    
+    
     public static int coinChange(int[] coins, int amount) {
         if(amount==0) return 0;
         int[] dp = new int[amount];
