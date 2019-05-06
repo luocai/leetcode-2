@@ -20,23 +20,38 @@ public class lc239 {
             System.out.print(',');
         }
     }
-    public static int[] maxSlidingWindow(int[] nums, int k) {
-        if(nums.length==0)
-            return new int[]{};
+      
+    // 思路： 用一个队列模拟窗口， 队首是最大值，随着窗口移动更新
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        
+        if(nums.length == 0)
+            return new int[0];
+        
         int[] res = new int[nums.length-k+1];
-        int cur = 0;
-        Deque<Integer> dq = new ArrayDeque();   //队列里是递减的
-        for (int i = 0; i < nums.length ; i++) {
-            if( !dq.isEmpty() && dq.peekFirst()<=i-k)
-                dq.removeFirst();
-            while( !dq.isEmpty() && nums[dq.peekLast()]<=nums[i]){// removeLast 不是 First。  自己写的时候这写错了，如果是First的话，有些Case也能过
-                dq.removeLast();
+        int m = 0;
+        
+        
+        
+        LinkedList<Integer> queue = new LinkedList<>();
+        
+        for(int i = 0; i < nums.length; i++){
+            
+            while(!queue.isEmpty() && nums[i] > nums[queue.peekLast()]){
+                queue.pollLast();
             }
-            dq.addLast(i);
-            if(i>=k-1){
-                res[cur] = nums[dq.peekFirst()];
-                cur++;
+            
+            queue.addLast(i);
+            
+            // i-k 表示 滑动窗口的最左边界
+            if(i-k == queue.peekFirst()){
+                queue.pollFirst();
             }
+            
+            // 窗口大于索引值
+            if( i >= k-1){
+                res[m++] = nums[queue.peekFirst()];
+            }
+            
         }
         return res;
     }
