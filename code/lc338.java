@@ -8,13 +8,22 @@ package code;
  * Tips：注意细节，边界情况
  */
 public class lc338 {
-    public static void main(String[] args) {
-        int[] res = countBits(0);
-        for (int i = 0; i < res.length ; i++) {
-            System.out.print(res[i]);
-            System.out.print(" ");
+    //dp[i] = dp[i>>1] + i % 2;
+    // 1011
+    // 101
+    // 如果i是偶数，那么 和i>>1 一样的位数 ， 否则就比他多一位 
+    public int[] countBits(int num) {
+        
+        int[] dp = new int[num+1];
+        dp[0] = 0;
+        
+        for(int i = 1; i <= num ;i++){
+            dp[i] = dp[i>>1] + i % 2;
         }
+        return dp;
     }
+    
+    
     public static int[] countBits(int num) {
         int[] dp = new int[num+1];
         int i = 1;
