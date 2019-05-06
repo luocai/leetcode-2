@@ -10,6 +10,49 @@ package code;
 import java.util.*;
 
 public class lc347 {
+    
+    // 小顶堆
+     public List<Integer> topKFrequent(int[] nums, int k) {
+        
+       Map<Integer,Integer> map = new HashMap();
+        
+       //统计个数
+        for(int i = 0; i < nums.length ;i++){
+            if(!map.containsKey(nums[i])){
+                map.put(nums[i], 1);
+            }else{
+                map.put(nums[i],map.get(nums[i])+1);
+            }
+        }
+        
+        //使用优先队列，保存前k大的  （小顶堆，堆顶是最小的）
+        PriorityQueue<Integer> queue = new PriorityQueue(new Comparator<Integer>(){
+            
+            public int compare(Integer a, Integer b){
+                return map.get(a) - map.get(b);
+            }
+        });
+
+        //优先队列存储
+        for(int key : map.keySet()){
+            if(queue.size() < k){
+                queue.add(key);
+            }else if(map.get(key) > map.get(queue.peek())){
+                queue.remove();
+                queue.add(key);
+            }
+        }
+        
+        List<Integer> res = new ArrayList();
+        while(!queue.isEmpty()){
+            res.add(queue.remove());
+        }
+        return res;
+        
+    }
+    
+    
+    
     public static void main(String[] args) {
         int[] nums = {1,1,1,2,2,3};
         int k = 2;
