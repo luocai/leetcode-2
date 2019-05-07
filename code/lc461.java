@@ -8,6 +8,22 @@ package code;
  * Tips：
  */
 public class lc461 {
+    
+    // 位运算
+    public int hammingDistance(int x, int y) {
+        int res = 0;
+        
+        for(; x > 0 || y >0 ; x>>=1, y>>=1){
+            // 分别计算每一位
+            int i = x & 1;
+            int j = y & 1;
+            if((i ^ j) == 1)
+                res++;
+        }
+        return res;
+    }
+    
+    
     public int hammingDistance(int x, int y) {
         int num = x^y;
         int res = 0;
