@@ -9,6 +9,28 @@ package code;
  * Tips：
  */
 public class lc538 {
+    
+     //全局变量
+    int sum = 0;
+    // 要利用bst树的性质 
+    //以右->根->左的顺序遍历二叉树，将遍历顺序的前一个结点的累加值记录起来，和当前结点相加，得到当前结点的累加值。
+    public TreeNode convertBST(TreeNode root) {
+       
+        if(root == null)
+            return null;
+        
+        //右边的都是比他大的
+        convertBST(root.right);
+        
+        sum += root.val;
+        root.val = sum;
+        convertBST(root.left);
+        return root;
+       
+    }
+    
+    
+    
     public class TreeNode {
         int val;
         TreeNode left;
