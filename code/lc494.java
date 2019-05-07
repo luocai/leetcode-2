@@ -11,6 +11,37 @@ package code;
  *       lc416, lc494
  */
 public class lc494 {
+    
+    //dp[i]代表的含义是从nums中取数相加和为i时有多少种取法。
+    //i=0时，就是说从nums中取数相加和为0时有几种取法，只有一种即一个数也不取，所以dp[0]=1
+    // 转化为找到nums的一个子集 P，使得sum(P) = (target + sum(nums)) / 2
+    public int findTargetSumWays(int[] nums, int S) {
+        
+        int sum = 0;
+        for(int s : nums){
+            sum += s;
+        }
+        
+        if(sum < S || (sum+S) % 2 == 1)
+            return 0;
+        
+        sum = (sum + S) / 2;
+        
+        int[] dp = new int[sum+1];
+        dp[0] = 1;
+        
+        //背包？？
+        for(int i = 0; i < nums.length; i++){
+            for(int j = sum; j >= nums[i] ;j--){
+                dp[j] += dp[j-nums[i]];
+            }
+        }
+        
+        return dp[sum];
+    }
+    
+    
+    
     public int findTargetSumWays(int[] nums, int S) {
         int sum = 0;
         for (int i : nums) {
