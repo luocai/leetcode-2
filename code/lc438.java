@@ -16,6 +16,51 @@ public class lc438 {
     public static void main(String[] args) {
         System.out.println(findAnagrams("cbaebabacd", "abc"));
     }
+    
+    
+    
+    // 滑动窗口
+    public List<Integer> findAnagrams(String s, String p) {
+        
+        List<Integer> res = new ArrayList();
+        if(s.length() < p.length())
+            return res;
+        
+        //计算p中各个字符的数量
+        int[] pdic = new int[26];
+        for(char c : p.toCharArray()){
+            pdic[c-'a']++;
+        }
+        
+        //计算窗口各个字符的数量，窗口大小==p的长度（此时是p长度-1，在向右移动的时候维持p的长度）
+        int[] swindow = new int[26];
+        for(int i = 0; i < p.length()-1 ;i++){
+            swindow[s.charAt(i)-'a']++;
+        }
+        
+        //让窗口向右移动，每次移动一格
+        for(int i = p.length()-1; i < s.length() ;i++){
+            swindow[s.charAt(i)-'a']++;
+            if(isSame(pdic,swindow)){
+                res.add(i-p.length()+1);
+            }
+            //左边界的字符删除
+            int edge = i-p.length() + 1;
+            swindow[s.charAt(edge)-'a']--;
+        }
+        
+        return res;
+    }
+    
+    public boolean isSame(int[] a, int[] b){
+        for(int i = 0; i < a.length ;i++){
+            if(a[i] != b[i])
+                return false;
+        }
+        return true;
+    }
+    
+    
     public static List<Integer> findAnagrams(String s, String p) {
         List<Integer> ls = new ArrayList<>();
         if(s.length()<p.length())
