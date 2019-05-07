@@ -15,6 +15,34 @@ public class lc448 {
     public static void main(String[] args) {
         System.out.println(findDisappearedNumbers(new int[]{4,3,2,7,8,2,3,1}));
     }
+    
+    // 归位法
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        
+        for(int i = 0; i < nums.length;){
+            
+            if(nums[i] == i+1 || nums[nums[i]-1] == nums[i]){
+                i++;
+                continue;
+            }
+            
+         
+            int temp = nums[nums[i]-1];
+            nums[nums[i]-1] = nums[i];
+            nums[i] = temp;
+        }
+        
+        List<Integer> res = new ArrayList<>();
+        for(int i = 0;i < nums.length ;i++){
+            if(nums[i] != i+1){
+                res.add(i+1);
+            }
+        }
+        return res;
+    }
+    
+    
+    
     public static List<Integer> findDisappearedNumbers(int[] nums) {
         for (int i = 0; i < nums.length ; i++) {
             if(nums[i]-1!=i && nums[nums[i]-1]!=nums[i]) {
