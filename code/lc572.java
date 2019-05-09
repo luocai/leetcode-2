@@ -16,15 +16,27 @@ public class lc572 {
         TreeNode(int x) { val = x; }
     }
 
-    public boolean isSubtree(TreeNode s, TreeNode t) {
-        if (s == null) return false;
-        return helper(s,t) || isSubtree(s.left,t) ||isSubtree(s.right,t);   // 注意递归方法的不同，是调用哪个函数
+    // 递归
+     public boolean isSubtree(TreeNode s, TreeNode t) {
+        
+        if(s == null)
+            return false;
+        
+        boolean res = solution(s,t);
+        
+        return res || isSubtree(s.left, t) || isSubtree(s.right, t);
     }
-    public boolean helper(TreeNode s, TreeNode t){
-        if( s==null && t==null ) return true;
-        if( s==null || t==null || s.val!=t.val ) return false;
-        return helper(s.left, t.left) && helper(s.right, t.right);
+    
+    public boolean solution(TreeNode s, TreeNode t){
+        if(s == null && t == null)
+            return true;
+        if(s == null || t == null || s.val != t.val)
+            return false;
+        
+        return solution(s.left, t.left) && solution(s.right, t.right);
     }
+    
+    
 
     public boolean isSubtree2(TreeNode s, TreeNode t) {
         StringBuilder tree1 = new StringBuilder();
