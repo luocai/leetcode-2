@@ -13,6 +13,41 @@ import java.util.HashSet;
  * Tips：lc416, lc494
  */
 public class lc416 {
+    
+     // 抽象成01背包
+    public boolean canPartition(int[] nums) {
+        
+        int s = 0;
+        for(int n : nums)
+            s += n;
+        
+        if(s % 2 == 1)
+            return false;
+        
+        s /= 2;
+        
+        //问题转化为数组中和为 s是否存在
+        
+        boolean[] dp = new boolean[s+1];
+   
+        dp[0] = true;
+        
+        //遍历背包
+        for(int i = 1; i < nums.length; i++){
+            
+            // 从背包中选 nums[i]
+            for(int j = s; j >= nums[i] ;j--){
+                
+                dp[j] = dp[j-nums[i]] || dp[j];
+            }
+        }
+        return dp[s];
+        
+    }
+    
+    
+    
+    
     public static void main(String[] args) {
         int[] nums = {1, 2, 5};
         System.out.println(canPartition(nums));
