@@ -17,6 +17,35 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class lc406 {
+    
+    public int[][] reconstructQueue(int[][] people) {
+        
+        Arrays.sort(people, new Comparator<int[]>(){
+            
+            public int compare(int[] a, int[] b){
+                //如果身高相同，按照升序排
+                if(a[0] == b[0]){
+                    return a[1] - b[1];
+                }else{ //如果身高不同，按照身高 降序排
+                    return b[0] - a[0];
+                }
+            }
+        });
+        
+        //K值定义为 排在h前面且身高大于或等于h的人数 
+        //因为从身高降序开始插入，此时所有人身高都大于等于h
+        //因此K值即为需要插入的位置
+        List<int[]> res = new ArrayList();
+        
+        for(int[] c : people){
+            res.add(c[1],c);
+        }
+        
+        return res.toArray(new int[res.size()][]);
+    }
+    
+    
+    
     public static void main(String[] args) {
         int[][] people = {{7,0}, {4,4}, {7,1}, {5,0}, {6,1}, {5,2}};
         reconstructQueue(people);
