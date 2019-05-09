@@ -8,6 +8,31 @@ package code;
  * Tips：
  */
 public class lc543 {
+    
+    int res = 0;
+    public int diameterOfBinaryTree(TreeNode root) {
+        
+        solution(root);
+        return res == 0 ? 0 : res - 1;
+        
+    }
+    
+    public int solution(TreeNode root){
+         if(root == null)
+            return 0;
+        
+        int l = solution(root.left);
+        int r = solution(root.right);
+        
+        int tr = l + r + 1;
+        if(tr > res)
+            res = tr;
+        //回溯
+        return Math.max(l,r) + 1;
+    }
+    
+    
+    
     public class TreeNode {
         int val;
         TreeNode left;
