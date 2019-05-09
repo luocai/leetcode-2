@@ -11,6 +11,8 @@ public class lc647 {
     public static void main(String[] args) {
         System.out.println(countSubstrings("aaa"));
     }
+    
+    //中心拓展法， 从位置0开始， 向两边扩展
     public static int countSubstrings(String s) {
         int count = 0;
         for (int i = 0; i < s.length() ; i++) {
