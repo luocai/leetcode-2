@@ -40,6 +40,7 @@ public class lc48 {
 //		}
 //		
 		//左对角线对称  matrix[i][j] = matrix[j][i];
+	    	//左对角线对称  (0,0) -> 右下角的点
 		for(int i = 0; i < matrix.length; i++){
 			for(int j = i+1; j < matrix[0].length; j++){
 				int temp = matrix[i][j];
