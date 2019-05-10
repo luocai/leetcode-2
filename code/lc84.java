@@ -13,55 +13,43 @@ import java.util.Stack;
  *       lc85
  */
 public class lc84 {
-    public static void main(String[] args) {
-        int[] heights = {2,1,5,6,2,3};
-        System.out.println(largestRectangleArea(heights));
-        System.out.println(largestRectangleArea2(heights));
+ class Solution {
+     
+    //单调栈 o(n)
+    public int largestRectangleArea(int[] heights) {
+        if(heights == null || heights.length == 0) return 0;
+        Stack<Integer> s = new Stack<>();
+        int maxArea = 0;
+        for(int i = 0; i < heights.length; i++) {
+            while (!s.isEmpty() && heights[i] <= heights[s.peek()]){
+                int top = s.pop();
+                int L = s.isEmpty() ? -1 : s.peek(); //如果左边没有比height[top]小的就是-1
+                maxArea = Math.max(maxArea, heights[top] * (i - L - 1));
+            }
+            s.push(i); //注意是下标入栈
+        }
+        while(!s.isEmpty()){
+            int top = s.pop();
+            int L = s.isEmpty() ? -1 : s.peek();
+            maxArea = Math.max(maxArea, heights[top] * (heights.length - L - 1)); // 右边没有比height[top]大的,就是右边界height.length
+        }
+        return maxArea;
     }
+}
 
-    public static int largestRectangleArea(int[] heights) {
-        Stack<Integer> st = new Stack();
-        int res = 0;
-        for (int i = 0; i <= heights.length ; i++) {
-            int h = (i == heights.length ? 0 : heights[i]);
-            if( st.size()==0 || h>heights[st.peek()] ){ //递增入栈，保证栈内索引对应的Height递增
-                st.push(i);
-            }else{
-                int n = st.pop();
-                int left;
-                if(st.isEmpty())
-                    left = -1;  //若为空，则到最左边
-                else
-                    left = st.peek();
-                res = Math.max(res, heights[n] * (i-left-1)); //i之前的，要-1
-                i--;
+    
+    //方法2  o(n2)
+   public int largestRectangleArea(int[] heights) {
+        if(heights == null || heights.length == 0) return 0;
+        int maxArea = 0;
+        for(int cur = 0; cur < heights.length; cur++){
+            if(cur != heights.length - 1 && heights[cur] <= heights[cur+1]) continue;
+            int minHeight = Integer.MAX_VALUE;
+            for(int i = cur; i >= 0; i--){
+                if(heights[i] < minHeight) minHeight = heights[i];
+                maxArea = Math.max(maxArea, minHeight * (cur - i + 1));
             }
         }
-        return res;
-    }
-
-    public static int largestRectangleArea2(int[] heights) {
-        int[] leftMax = new int[heights.length];
-        int[] rightMax = new int[heights.length];
-        for (int i = 0; i < heights.length ; i++) { //get leftMax  注意这样dp时数组中保存的边界必须是i-1或i+1，否则无法dp传递
-            int p = i-1;
-            while( p>=0 && heights[p]>=heights[i]){
-                p = leftMax[p];
-            }
-            leftMax[i] = p;
-        }
-        for (int i = heights.length-1; i >= 0 ; i--) { //get rightMax
-            rightMax[i] = i;
-            int p = i+1;
-            while( p<heights.length && heights[p]>=heights[i]){
-                p = rightMax[p];
-            }
-            rightMax[i] = p;
-        }
-        int res = 0;
-        for (int i = 0; i < heights.length ; i++) {
-            res = Math.max(res,(rightMax[i]-leftMax[i]-1)*heights[i]);
-        }
-        return res;
+        return maxArea;
     }
 }
