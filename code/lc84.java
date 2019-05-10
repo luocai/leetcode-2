@@ -11,6 +11,8 @@ import java.util.Stack;
  * Tips：和lc42做比较，都可以用栈或者dp来做. 很难，栈的操作很难想到.
  *       和lc42 dp作比较 和lc32栈做比较
  *       lc85
+ 
+    参考： https://github.com/ZXZxin/ZXBlog/blob/master/刷题/LeetCode/Data%20Structure/Stack/LeetCode%20-%2084.%20Largest%20Rectangle%20in%20Histogram(单调栈).md
  */
 public class lc84 {
  class Solution {
