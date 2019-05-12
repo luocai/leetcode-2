@@ -17,10 +17,12 @@ public class lc10 {
         dp[0][0] = true;
         //初始化dp[0][i]. dp[i][0]不用初始化,因为一定为false.
         for (int i = 1; i < p.length()+1 ; i++) {
+             // p的前一位是*,那么当i>1,时候，并且0..i-2已经匹配，那么0..i也是匹配的（即匹配0位）
             if(p.charAt(i-1)=='*')
                 if(i>1 && dp[0][i-2])
                     dp[0][i] = true;
         }
+        // 注意 i-1才表示当前位，而不是i
         for (int i = 1; i < s.length()+1 ; i++) {
             for (int j = 1; j < p.length()+1 ; j++) {
                 if(s.charAt(i-1)==p.charAt(j-1) || p.charAt(j-1)=='.')
@@ -31,8 +33,8 @@ public class lc10 {
                         dp[i][j] = dp[i][j-2];
                     }else{
                         dp[i][j] = (dp[i-1][j] || dp[i-1][j-1] || dp[i][j-2]);
-                        //dp[i-1][j] * 表示前面字符出现多次
-                        //dp[i-1][j-1] * 表示前面字符出现一次  dp[i]dp[j-1]也行
+                        //dp[i-1][j] * 表示前面字符出现多次   观察 dp[i-1][j] -> dp[i][j]  说明s走了一格，p不变
+                         //dp[i-1][j-1] * 表示前面字符出现一次  dp[i]dp[j-1]也行
                         // dp[i][j-2] *表示前边字符出现0次，覆盖这些情况. s="ba" p="baa*"; s="a" p="ab*a*"
                     }
                 }
