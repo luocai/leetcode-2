@@ -19,6 +19,7 @@ public class lc19 {
         }
         if(n != 0)
             return null;
+        // 此处要注意
         if(p == null){
             return head.next;
         }
