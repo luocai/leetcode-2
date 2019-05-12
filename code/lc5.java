@@ -33,7 +33,36 @@ public class lc5 {
         return res;
     }
     
-    
+    //中心拓展法
+    //从i位置开始，每个位置都要往左右两边开始扩张，相等就继续扩，不相等就停止，并记录，注意这里的下标的变化，以及边界的处理；
+    //这里要注意一个问题就是要同时处理奇回文(如cbabd) 和偶回文(如abbccd)，只需要在扩展的时候扩展两次就可以了。
+
+    private int len = 0;    //记录最长回文的长度
+    private int begin = 0; // 记录最长回文的起始位置
+
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() < 2) return s;
+        char[] chs = s.toCharArray();
+        for (int i = 0; i < chs.length; i++) {
+            expand(chs, i, i);        //奇回文  例如 cbabd
+            expand(chs, i, i + 1); //偶数回文  例如abbccd
+        }
+        return s.substring(begin, begin + len);
+    }
+
+    private void expand(char[] chs, int L, int R) {
+        while (L >= 0 && R < chs.length && chs[L] == chs[R]) { // 往两边扩展
+            L--;
+            R++;
+        }
+        // 为什么是r-l-1, 因为上面的判断条件中, l或者r超出了范围或者不满足条件
+        // 比如   aabac, 此时L = 0, R = 4, 长度为 R - L - 1，也就是中间的3
+        if (R - L - 1 > len) { 
+            len = R - L - 1;
+            begin = L + 1;
+        }
+    }
+
     
     public static void main(String[] args) {
         String s = "cbbd";
