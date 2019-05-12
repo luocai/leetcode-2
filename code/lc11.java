@@ -12,17 +12,27 @@ public class lc11 {
         System.out.println(maxArea(arr));
     }
 
-    public static int maxArea(int[] height) {
-        int left = 0;
-        int right = height.length-1;
-        int result = 0;
-        while(left<right){
-            result = Math.max( result, Math.min(height[left],height[right])*(right-left) );
-            if(height[left]<height[right])
-                left++;
-            else
-                right--;
+     public int maxArea(int[] height) {
+        
+        int l = 0, r = height.length - 1;
+        
+        int res = 0;
+        
+        while( l < r){
+            
+            int area = Math.min(height[l],height[r]) * (r-l);
+            
+            if(area > res){
+                res = area;   
+            }
+            
+            //哪个小走哪个，两线段之间形成的区域的高总是会受到其中较短那条高的长度的限制。而且，两线段距离越远，得到的面积就越大。
+            if(height[l] > height[r]){
+                r--;
+            }else{
+                l++;
+            }
         }
-        return result;
+        return res;
     }
 }
