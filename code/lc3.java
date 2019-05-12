@@ -9,6 +9,31 @@ package code;
 import java.util.HashMap;
 
 public class lc3 {
+    
+      //滑动窗口
+    public int lengthOfLongestSubstring(String s) {
+        //用来记录窗口内的字符是否出现过
+        Set<Character> set = new HashSet();
+        
+        int l = 0 , r = -1;
+        int res = 0;
+        while(r < s.length()){
+            //一定要break, 一是防止越界，二是不然L不会break； R你都到str.length - 1，L你要再移动也不会更长了
+            if(r == s.length() -1) 
+                break;
+            //右指针一直走，遇到出现过的左指针走，直到遇到出现过的那个字母
+            if(!set.contains(s.charAt(r+1))){
+                set.add(s.charAt(++r));
+            }else{
+                set.remove(s.charAt(l++));
+            }
+            res = Math.max(res, r - l +1);
+        }
+        
+        return res;
+    }
+    
+    
     public static void main(String[] args) {
         String s = "abba";
         System.out.println(lengthOfLongestSubstring(s));
