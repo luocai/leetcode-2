@@ -11,6 +11,49 @@ import java.util.List;
  * Tips：lc39
  */
 public class lc131 {
+    
+    //回溯法
+     List<List<String>> res = new ArrayList();
+    public List<List<String>> partition(String s) {
+        
+        solution(s,new ArrayList());
+        return res;
+    }
+    
+    public void solution(String s,List<String> tr){
+        
+        if(s.length() == 0){
+         
+            res.add(new ArrayList(tr));
+            return;
+        }
+        for(int i = 1; i <= s.length() ;i++){
+            String cur = s.substring(0,i);
+          
+            if(!judge(cur))
+                continue;
+            
+            tr.add(cur);
+            solution(s.substring(i,s.length()), tr);
+            tr.remove(tr.size()-1);
+        }
+    }
+    
+    public boolean judge(String s){
+        
+        int l = 0, r = s.length() -1;
+        
+        while( l < r){
+            if(s.charAt(l) != s.charAt(r)){
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
+    }
+    
+    
     public static void main(String[] args) {
         List res = partition("aab");
         System.out.println();
