@@ -145,6 +145,6 @@
 | 380  | [Insert Delete GetRandom O(1)]() | Medium | [Java](./code/lc380.java)
 | 384  | [Shuffle an Array]() | Medium | [Java](./code/lc384.java)
 | 387  | [First Unique Character in a String]() | Easy | [Java](./code/lc387.java)
-| 395  | [Longest Substring with At Least K Repeating Characters]() | Medium | [Java](./code/lc395.java) | 
+| 395  | [Longest Substring with At Least K Repeating Characters]() | Medium | [Java](./code/lc395.java) | ok 2
 | 412  | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz) | Easy | [Java](./code/lc412.java)
 | 454  | [4Sum II](https://leetcode.com/problems/4sum-ii) | Medium | [Java](./code/lc454.java) | ok 1
