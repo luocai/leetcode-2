@@ -139,7 +139,7 @@
 | 344  | [Reverse String]() | Easy | [Java](./code/lc344.java)
 | 347  | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) |Medium| [Java](./code/lc347.java)
 | 348  | [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe) | Medium | [没权限]
-| 350  | [Intersection of Two Arrays II]() | Easy | [Java](./code/lc350.java)
+| 350  | [Intersection of Two Arrays II]() | Easy | [Java](./code/lc350.java) | 
 | 371  | [Sum of Two Integers]() | Easy | [Java](./code/lc371.java) | ok 6
 | 378  | [Kth Smallest Element in a Sorted Matrix]() | Medium | [Java](./code/lc378.java) | ok 5
 | 380  | [Insert Delete GetRandom O(1)]() | Medium | [Java](./code/lc380.java) | ok 4 
