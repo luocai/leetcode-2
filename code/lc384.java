@@ -8,6 +8,8 @@ package code;
  * Tips：
  */
 public class lc384 {
+    
+    //这个只有死记咯
     public class Solution {
 
         private int[] nums;
@@ -25,6 +27,7 @@ public class lc384 {
         public int[] shuffle() {
             int[] rand = new int[nums.length];
             for (int i = 0; i < nums.length; i++){
+                //注意  (int) Math.random() * (i+1) 是不对滴
                 int r = (int) (Math.random() * (i+1));
                 rand[i] = rand[r];
                 rand[r] = nums[i];
