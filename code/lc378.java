@@ -14,6 +14,41 @@ import java.util.PriorityQueue;
  *       lc240
  */
 public class lc378 {
+    
+     public int kthSmallest(int[][] matrix, int k) {
+        int n = matrix.length;
+        int l = matrix[0][0];
+        int r = matrix[n-1][n-1];
+        
+        int res = 0;
+        // 记住有 = 号
+        while(l <= r){
+            int mid = l + (r - l)/2;
+            if(getCount(matrix, mid) < k){
+                res = mid;
+                l = mid + 1;
+            }else{
+                r = mid - 1;
+            }
+            
+        }
+        return res;
+    }
+    
+    // 找数组中比mid小的数的个数
+    public int getCount(int[][] matrix, int mid){
+        int count = 0;
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0;j < matrix[0].length ;j++){
+                if(matrix[i][j] < mid)
+                    count++;
+            }
+        }
+        return count;
+    }
+    
+    
+    -------------------------
     class Cell{
         int val, row, col;
         Cell(int v, int r, int c){
