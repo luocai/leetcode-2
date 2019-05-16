@@ -13,6 +13,61 @@ import java.util.List;
  * Tips：
  */
 public class lc380 {
+    
+     // map用来存 value, index
+    Map<Integer,Integer> map ;
+    // list 存值
+    List<Integer> list;
+    /** Initialize your data structure here. */
+    public RandomizedSet() {
+        map = new HashMap();
+        list = new ArrayList();
+    }
+    
+    /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
+    public boolean insert(int val) {
+        
+        if(map.containsKey(val))
+            return false;
+        
+        list.add(val);
+        map.put(val,list.size()-1);
+        return true;
+    }
+    
+    /** Removes a value from the collection. Returns true if the collection contained the specified element. */
+    public boolean remove(int val) {
+        
+        if(!map.containsKey(val))
+            return false;
+        
+        //保存这个值的位置
+        int tindex = map.get(val);
+        // 交换当前值和 末尾值，保证删除 o1
+        int temp = list.get(tindex);
+        list.set(tindex,list.get(list.size()-1));
+        list.set(list.size()-1, temp);
+        
+        //解除了在map，list中的绑定
+        map.put(list.get(tindex),tindex);
+        list.remove(list.size()-1);
+        map.remove(val);
+        return true;
+    }
+    
+    /** Get a random element from the collection. */
+    public int getRandom() {
+        int max = list.size();
+        int min = 0;
+        int index = (int)(Math.random()*(max-min)) + min;
+        return list.get(index);
+    }
+}
+
+
+
+
+------------------------------------
     public class RandomizedSet {
 
         HashMap<Integer, Integer> valToInd;
