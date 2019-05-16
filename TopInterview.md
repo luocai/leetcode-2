@@ -142,7 +142,7 @@
 | 350  | [Intersection of Two Arrays II]() | Easy | [Java](./code/lc350.java)
 | 371  | [Sum of Two Integers]() | Easy | [Java](./code/lc371.java)
 | 378  | [Kth Smallest Element in a Sorted Matrix]() | Medium | [Java](./code/lc378.java)
-| 380  | [Insert Delete GetRandom O(1)]() | Medium | [Java](./code/lc380.java)
+| 380  | [Insert Delete GetRandom O(1)]() | Medium | [Java](./code/lc380.java) | ok 4 
 | 384  | [Shuffle an Array]() | Medium | [Java](./code/lc384.java) | ok 3
 | 387  | [First Unique Character in a String]() | Easy | [Java](./code/lc387.java) | emmm
 | 395  | [Longest Substring with At Least K Repeating Characters]() | Medium | [Java](./code/lc395.java) | ok 2
