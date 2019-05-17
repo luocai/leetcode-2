@@ -133,11 +133,11 @@
 | 326  | [Power of Three]() | Easy | [Java](./code/lc326.java)
 | 328  | [Odd Even Linked List]() | Medium | [Java](./code/lc328.java)
 | 329  | [Longest Increasing Path in a Matrix]() | Hard | [Java](./code/lc329.java)
-| 334  | [Increasing Triplet Subsequence]() | Medium | [Java](./code/lc334.java)
-| 340  | [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters) | Hard | [Java](./code/lc340.java)
-| 341  | [Flatten Nested List Iterator]() | Medium | [Java](./code/lc341.java)
-| 344  | [Reverse String]() | Easy | [Java](./code/lc344.java)
-| 347  | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) |Medium| [Java](./code/lc347.java)
+| 334  | [Increasing Triplet Subsequence]() | Medium | [Java](./code/lc334.java) | 9 ok
+| 340  | [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters) | Hard | [Java](./code/lc340.java) | xx
+| 341  | [Flatten Nested List Iterator]() | Medium | [Java](./code/lc341.java) | xx
+| 344  | [Reverse String]() | Easy | [Java](./code/lc344.java) | emmm
+| 347  | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) |Medium| [Java](./code/lc347.java) | ok 8
 | 348  | [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe) | Medium | [没权限]
 | 350  | [Intersection of Two Arrays II]() | Easy | [Java](./code/lc350.java) | ok 7
 | 371  | [Sum of Two Integers]() | Easy | [Java](./code/lc371.java) | ok 6
