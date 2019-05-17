@@ -128,7 +128,7 @@
 | 300  | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) |Medium| [Java](./code/lc300.java)
 | 308  | [Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable) | Medium | [没权限]
 | 315  | [Count of Smaller Numbers After Self]() | Hard | [Java](./code/lc315.java)
-| 322  | [Coin Change](https://leetcode.com/problems/coin-change/)|Medium| [Java](./code/lc322.java)
+| 322  | [Coin Change](https://leetcode.com/problems/coin-change/)|Medium| [Java](./code/lc322.java) | 13 ok
 | 324  | [Wiggle Sort II]() | Medium | [Java](./code/lc324.java)
 | 326  | [Power of Three]() | Easy | [Java](./code/lc326.java) | 12 ok
 | 328  | [Odd Even Linked List]() | Medium | [Java](./code/lc328.java) | 11 ok
