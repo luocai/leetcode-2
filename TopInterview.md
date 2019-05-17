@@ -130,8 +130,8 @@
 | 315  | [Count of Smaller Numbers After Self]() | Hard | [Java](./code/lc315.java)
 | 322  | [Coin Change](https://leetcode.com/problems/coin-change/)|Medium| [Java](./code/lc322.java)
 | 324  | [Wiggle Sort II]() | Medium | [Java](./code/lc324.java)
-| 326  | [Power of Three]() | Easy | [Java](./code/lc326.java)
-| 328  | [Odd Even Linked List]() | Medium | [Java](./code/lc328.java)
+| 326  | [Power of Three]() | Easy | [Java](./code/lc326.java) | 12 ok
+| 328  | [Odd Even Linked List]() | Medium | [Java](./code/lc328.java) | 11 ok
 | 329  | [Longest Increasing Path in a Matrix]() | Hard | [Java](./code/lc329.java) | 10 ok
 | 334  | [Increasing Triplet Subsequence]() | Medium | [Java](./code/lc334.java) | 9 ok
 | 340  | [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters) | Hard | [Java](./code/lc340.java) | xx
