@@ -132,7 +132,7 @@
 | 324  | [Wiggle Sort II]() | Medium | [Java](./code/lc324.java)
 | 326  | [Power of Three]() | Easy | [Java](./code/lc326.java)
 | 328  | [Odd Even Linked List]() | Medium | [Java](./code/lc328.java)
-| 329  | [Longest Increasing Path in a Matrix]() | Hard | [Java](./code/lc329.java)
+| 329  | [Longest Increasing Path in a Matrix]() | Hard | [Java](./code/lc329.java) | 10 ok
 | 334  | [Increasing Triplet Subsequence]() | Medium | [Java](./code/lc334.java) | 9 ok
 | 340  | [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters) | Hard | [Java](./code/lc340.java) | xx
 | 341  | [Flatten Nested List Iterator]() | Medium | [Java](./code/lc341.java) | xx
