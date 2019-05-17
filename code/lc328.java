@@ -8,6 +8,30 @@ package code;
  * Tips：lc318
  */
 public class lc328 {
+    
+    public ListNode oddEvenList(ListNode head) {
+        
+        if(head == null)
+            return null;
+        
+        ListNode p = head,q = head.next;
+        ListNode q_head = q;
+        
+        //保证p可以走到末尾 ， 当q后面只有一个非空节点的时候，p可以继续走
+        while(q != null && q.next != null){
+            p.next = q.next;
+            p = p.next;
+            q.next = p.next;
+            q = q.next;
+        }
+        
+        p.next = q_head;
+           
+        return head;
+    }
+    
+   -------------------------------------
+       
     public class ListNode {
         int val;
         ListNode next;
