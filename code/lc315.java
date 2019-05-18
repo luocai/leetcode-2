@@ -16,6 +16,53 @@ import java.util.List;
  * Tips：好难呀，我日！
  */
 public class lc315 {
+    
+     class TreeNode{
+        int val;
+        int sum; 
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val){
+            this.val = val; 
+        }
+    }
+
+    public List<Integer> countSmaller(int[] nums) {
+        if(nums.length < 1)
+            return new ArrayList();
+        
+        int[] tr = new int[nums.length];
+        
+        //先声明根节点
+        TreeNode root = new TreeNode(nums[nums.length-1]);
+         // TreeNode root = null;
+        for(int i = nums.length-2; i >= 0; i--){
+            insert(root, nums[i], tr, i);
+        }
+        
+        List<Integer> res = new ArrayList();
+        for(int x : tr)
+            res.add(x);
+        return res;
+    }
+
+    public TreeNode insert(TreeNode root, int cur, int[] res, int index){
+        if(root == null){
+            root = new TreeNode(cur);
+        }else if(cur <= root.val){ //小于当前节点值则放入左子树
+            root.sum++; // 当前值比节点小，则节点左子树数目 +1
+            root.left = insert(root.left, cur, res, index);
+        }else {//大于当前节点值则放入右子树
+            // 这里有点难理解
+            res[index] += root.sum + 1;
+            root.right = insert(root.right, cur, res, index);
+        }
+        return root;
+    }
+    
+    
+    
+    -------------------------------
     class TreeNode{
         int val;
         int dup_num;
@@ -28,7 +75,8 @@ public class lc315 {
             this.sum = sum; //该节点左下节点个数，也就是比该节点值小的
         }
     }
-
+    //[5,2,6,1]
+    
     TreeNode root;
     public List<Integer> countSmaller(int[] nums) {
         if(nums.length<1) return new ArrayList<>();
