@@ -10,6 +10,19 @@ package code;
  * Tips：lc268 lc448 lc287
  */
 public class lc268 {
+    
+    // 求和 再减去那个值
+    public int missingNumber(int[] nums) {
+        int sum = 0;
+        for(int i : nums){
+            sum += i;
+        }
+        
+        return nums.length * (nums.length +1) / 2 - sum;
+    }
+    
+    
+    
     public int missingNumber(int[] nums) {
         int res = nums.length*(nums.length+1)/2;
         for(int i:nums) res-=i;
