@@ -116,14 +116,14 @@
 | 242  | [Valid Anagram]() | Easy | [Java](./code/lc242.java)
 | 251  | [Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector) | Medium | [没权限]
 | 253  | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii) | Medium | [没权限]
-| 268  | [Missing Number]() | Easy | [Java](./code/lc268.java)
+| 268  | [Missing Number]() | Easy | [Java](./code/lc268.java) | 20 ok
 | 269  | [Alien Dictionary]() | Hard |[没权限]
 | 277  | [Find the Celebrity]() | Medium | [没权限]
-| 279  | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) |Medium| [Java](./code/lc279.java)
-| 283  | [Move Zeroes](https://leetcode.com/problems/move-zeroes/)| Easy | [Java](./code/lc283.java)
+| 279  | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) |Medium| [Java](./code/lc279.java) | 19 ok
+| 283  | [Move Zeroes](https://leetcode.com/problems/move-zeroes/)| Easy | [Java](./code/lc283.java) | 18 ok
 | 285  | [Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst) | Medium | [没权限]
-| 287  | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) | Hard | [Java](./code/lc287.java)
-| 295  | [Find Median from Data Stream]() | Hard | [Java](./code/lc295.java)
+| 287  | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) | Hard | [Java](./code/lc287.java) | 17 ok
+| 295  | [Find Median from Data Stream]() | Hard | [Java](./code/lc295.java) | 16 ok
 | 297  | [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Hard | [Java](./code/lc297.java)
 | 300  | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) |Medium| [Java](./code/lc300.java) | 15 ok
 | 308  | [Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable) | Medium | [没权限]
