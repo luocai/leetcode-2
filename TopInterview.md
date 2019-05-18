@@ -125,9 +125,9 @@
 | 287  | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) | Hard | [Java](./code/lc287.java)
 | 295  | [Find Median from Data Stream]() | Hard | [Java](./code/lc295.java)
 | 297  | [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Hard | [Java](./code/lc297.java)
-| 300  | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) |Medium| [Java](./code/lc300.java)
+| 300  | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) |Medium| [Java](./code/lc300.java) | 15 ok
 | 308  | [Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable) | Medium | [没权限]
-| 315  | [Count of Smaller Numbers After Self]() | Hard | [Java](./code/lc315.java)
+| 315  | [Count of Smaller Numbers After Self]() | Hard | [Java](./code/lc315.java) | 14 ok
 | 322  | [Coin Change](https://leetcode.com/problems/coin-change/)|Medium| [Java](./code/lc322.java) | 13 ok
 | 324  | [Wiggle Sort II]() | Medium | [Java](./code/lc324.java)
 | 326  | [Power of Three]() | Easy | [Java](./code/lc326.java) | 12 ok
