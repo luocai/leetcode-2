@@ -8,6 +8,28 @@ package code;
  * Tips：和重排列那题联系一下 lc46
  */
 public class lc242 {
+
+   public boolean isAnagram(String s, String t) {
+        
+        // 哈希桶
+        int[] fren = new int[26];
+        
+        for(int i = 0; i < s.length() ; i++){
+            fren[s.charAt(i)-'a']++;
+        }
+        
+        for(int i = 0; i < t.length()  ; i++){
+            fren[t.charAt(i)-'a']--;
+        }
+        
+        for(int i = 0; i < fren.length; i++){
+            if(fren[i]!= 0)
+                return false;
+        }
+        return true;
+    }
+
+----------------------
     public boolean isAnagram(String s, String t) {
         if(s.length()!=t.length()) return false;
         int[] chs = new int[26];
