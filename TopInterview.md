@@ -102,15 +102,15 @@
 | 208  | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) |Medium| [Java](./code/lc208.java)
 | 210  | [Course Schedule II]() | Medium | [Java](./code/lc210.java)
 | 212  | [Word Search II]() | Hard | [Java](./code/lc212.java)
-| 215  | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) |Medium| [Java](./code/lc215.java)
-| 217  | [Contains Duplicate]() | Easy | [Java](./code/lc217.java)
+| 215  | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) |Medium| [Java](./code/lc215.java) | 29 ok
+| 217  | [Contains Duplicate]() | Easy | [Java](./code/lc217.java) | emmmm
 | 218  | [The Skyline Problem]() | Hard | [Java](./code/lc218.java)
 | 227  | [Basic Calculator II]() | Medium | [Java](./code/lc227.java)
-| 230  | [Kth Smallest Element in a BST]() | Medium | [Java](./code/lc230.java)
-| 234  | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | Easy | [Java](./code/lc234.java)
-| 236  | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) |Medium| [Java](./code/lc236.java)
-| 237  | [Delete Node in a Linked List]() | Easy | [Java](./code/lc237.java)
-| 238  | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) |Medium| [Java](./code/lc238.java)
+| 230  | [Kth Smallest Element in a BST]() | Medium | [Java](./code/lc230.java) | 28 ok
+| 234  | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | Easy | [Java](./code/lc234.java) | 27 ok
+| 236  | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) |Medium| [Java](./code/lc236.java) | 26 ok
+| 237  | [Delete Node in a Linked List]() | Easy | [Java](./code/lc237.java) | 25 ok
+| 238  | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) |Medium| [Java](./code/lc238.java) | 24 ok
 | 239  | [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) | Hard | [Java](./code/lc239.java) | 23 ok
 | 240  | [Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/) |Medium| [Java](./code/lc240.java) | 22 ok
 | 242  | [Valid Anagram]() | Easy | [Java](./code/lc242.java) | 21 ok
