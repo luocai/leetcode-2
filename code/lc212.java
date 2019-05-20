@@ -13,6 +13,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class lc212 {
+    
+     // 暴力
+    public List<String> findWords(char[][] board, String[] words) {
+        List<String> res = new ArrayList();
+        
+        for(int i = 0; i < words.length; i++){
+            for(int m = 0; m < board.length ; m++){
+                for(int n = 0; n < board[0].length; n++){
+                    if(dfs(board, words[i], 0, m, n) && !res.contains(words[i])){
+                        res.add(words[i]);
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    
+    // dfs 
+    public boolean dfs(char[][] board, String word, int index, int i, int j){
+        
+        if(i<0 || j<0 || i >= board.length || j >= board[0].length || index >= word.length())
+            return false;
+                
+        if(board[i][j] == word.charAt(index)){
+            if(index == word.length()-1)
+                return true;
+            
+            board[i][j] = '#'; // 去重
+            boolean res =  dfs(board, word, index+1, i+1, j)
+                || dfs(board, word, index+1, i-1, j)
+                || dfs(board, word, index+1, i, j+1)
+                || dfs(board, word, index+1, i, j-1);
+            board[i][j] = word.charAt(index); // 记得回溯
+            return res;
+        }
+        return false;
+    }
+    
+    
+    -------------------------
     public List<String> findWords(char[][] board, String[] words) {
         //暴力搜索
         List<String> res = new ArrayList<>();
