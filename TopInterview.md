@@ -91,8 +91,8 @@
 | 172  | [Factorial Trailing Zeroes]() | Easy | [Java](./code/lc172.java)
 | 179  | [Largest Number]() | Medium | [Java](./code/lc179.java)
 | 189  | [Rotate Array]() | Easy | [Java](./code/lc189.java)
-| 190  | [Reverse Bits]() | Easy | [Java](./code/lc190.java)
-| 191  | [Number of 1 Bits]() | Easy | [Java](./code/lc191.java)
+| 190  | [Reverse Bits]() | Easy | [Java](./code/lc190.java) 
+| 191  | [Number of 1 Bits]() | Easy | [Java](./code/lc191.java) | 38 ok
 | 198  | [House Robber](https://leetcode.com/problems/house-robber/)  | Easy | [Java](./code/lc198.java) | 37 ok
 | 200  | [Number of Islands](https://leetcode.com/problems/number-of-islands/) |Medium| [Java](./code/lc200.java) | 36 ok
 | 202  | [Happy Number]() | Easy | [Java](./code/lc202.java) | 35 ok
