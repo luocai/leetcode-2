@@ -17,7 +17,6 @@ public class lc207 {
         //System.out.println(canFinish(2, prerequisites));
         System.out.println(canFinish2(2, prerequisites));
     }
-    // bfs 拓扑排序
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         //入度
         int[] indegree = new int[numCourses];
@@ -32,19 +31,19 @@ public class lc207 {
             grid[s][e] = 1;
             indegree[s]++;
         }
-        
-        LinkedList<Integer> stack = new LinkedList();
+        // 使用队列
+        LinkedList<Integer> queue = new LinkedList();
         
         // 把入度为0的课程入栈，可以直接学习的课程
         for(int i = 0; i < numCourses; i++){
             if(indegree[i] == 0){
-                stack.push(i);
+                queue.addLast(i);
             }
         }
         
         int count = 0;
-        while(!stack.isEmpty()){
-            int s = stack.pop();
+        while(!queue.isEmpty()){
+            int s = queue.pollFirst();
             count++;
             //遍历，更新学了s才能学的课程
             for(int i = 0; i < numCourses; i++){
@@ -52,7 +51,7 @@ public class lc207 {
                    
                     indegree[i]--;
                     if(indegree[i] == 0){
-                         stack.push(i);
+                         queue.addLast(i);
                     }
                 }
                 
@@ -61,7 +60,8 @@ public class lc207 {
         
         return count == numCourses;
     }
-
+    
+    ---------------------------------
     public static boolean canFinish2(int numCourses, int[][] prerequisites) {
         HashMap<Integer, LinkedList<Integer>> graph = new HashMap<>();
         // 转换成连接表
