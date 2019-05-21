@@ -96,7 +96,7 @@
 | 198  | [House Robber](https://leetcode.com/problems/house-robber/)  | Easy | [Java](./code/lc198.java)
 | 200  | [Number of Islands](https://leetcode.com/problems/number-of-islands/) |Medium| [Java](./code/lc200.java)
 | 202  | [Happy Number]() | Easy | [Java](./code/lc202.java)
-| 204  | [Count Primes]() | Easy | [Java](./code/lc204.java)
+| 204  | [Count Primes]() | Easy | [Java](./code/lc204.java) | 34 ok
 | 206  | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Easy |[Java](./code/lc206.java) | 33 ok
 | 207  | [Course Schedule](https://leetcode.com/problems/course-schedule/) |Medium|[Java](./code/lc207.java) | 32 ok
 | 208  | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) |Medium| [Java](./code/lc208.java)
