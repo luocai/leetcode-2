@@ -12,6 +12,55 @@ import java.util.Queue;
  *       注意先统计入度并转化为邻接矩阵，之后就好操作了
  */
 public class lc210 {
+
+    // 拓扑排序
+     public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] indegree = new int[numCourses];
+        
+        int[][] graph = new int[numCourses][numCourses];
+        
+        // 转化为图结构，并计算入度
+        for(int i = 0; i < prerequisites.length; i++){
+            int pre = prerequisites[i][1];
+            int aft = prerequisites[i][0];
+            
+            graph[pre][aft] = 1;
+            indegree[aft]++;
+        }
+        
+        int[] res = new int[numCourses];
+        int r = 0;
+        
+        LinkedList<Integer> queue = new LinkedList();
+        
+        // 把入度为0的边入队
+        for(int i = 0; i < indegree.length; i++){
+            if(indegree[i] == 0){
+                queue.addLast(i);
+            }
+        }
+        
+        while(!queue.isEmpty()){
+            int k = queue.pollFirst();
+            res[r++] = k;
+            System.out.println(k);
+            // 以k为起点， i为终点的边断开
+            for(int i = 0; i < graph.length; i++){
+                if(graph[k][i] == 1){
+                    indegree[i]--;
+                    
+                    if(indegree[i] == 0){
+                        queue.addLast(i);
+                    }
+                }
+            }
+        }
+        return r == numCourses ? res : new int[0];
+        
+    }
+    
+    
+    --------------------
     public static void main(String[] args) {
         int[][] prerequisites = {{1,0},{2,0},{3,1},{3,2}};
         //System.out.println(canFinish(2, prerequisites));
