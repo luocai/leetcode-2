@@ -101,7 +101,7 @@
 | 207  | [Course Schedule](https://leetcode.com/problems/course-schedule/) |Medium|[Java](./code/lc207.java)
 | 208  | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) |Medium| [Java](./code/lc208.java)
 | 210  | [Course Schedule II]() | Medium | [Java](./code/lc210.java)
-| 212  | [Word Search II]() | Hard | [Java](./code/lc212.java)
+| 212  | [Word Search II]() | Hard | [Java](./code/lc212.java) | 30 ok
 | 215  | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) |Medium| [Java](./code/lc215.java) | 29 ok
 | 217  | [Contains Duplicate]() | Easy | [Java](./code/lc217.java) | emmmm
 | 218  | [The Skyline Problem]() | Hard | [Java](./code/lc218.java)
