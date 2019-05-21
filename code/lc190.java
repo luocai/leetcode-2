@@ -9,6 +9,24 @@ package code;
  * Tips：注意 >>> 无符号位移 它不会将所处理的值的最高位视为正负符号，所以作位移处理时，会直接在空出的高位填入0
  */
 public class lc190 {
+    // 位运算
+    public int reverseBits(int n) {
+        int res = 0;
+        
+        for(int i = 0; i <32;i++){
+            
+            if(((n >> i) & 1) == 0){
+                res <<= 1;
+            }else{
+                res <<= 1;
+                res += 1;
+            }
+        }
+        return res;
+    }
+    
+    
+    ---------------------
     public static void main(String[] args) {
         System.out.println(reverseBits(10));
     }
