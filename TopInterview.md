@@ -97,10 +97,10 @@
 | 200  | [Number of Islands](https://leetcode.com/problems/number-of-islands/) |Medium| [Java](./code/lc200.java)
 | 202  | [Happy Number]() | Easy | [Java](./code/lc202.java)
 | 204  | [Count Primes]() | Easy | [Java](./code/lc204.java)
-| 206  | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Easy |[Java](./code/lc206.java)
-| 207  | [Course Schedule](https://leetcode.com/problems/course-schedule/) |Medium|[Java](./code/lc207.java)
+| 206  | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Easy |[Java](./code/lc206.java) | 33 ok
+| 207  | [Course Schedule](https://leetcode.com/problems/course-schedule/) |Medium|[Java](./code/lc207.java) | 32 ok
 | 208  | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) |Medium| [Java](./code/lc208.java)
-| 210  | [Course Schedule II]() | Medium | [Java](./code/lc210.java)
+| 210  | [Course Schedule II]() | Medium | [Java](./code/lc210.java) | 31 ok
 | 212  | [Word Search II]() | Hard | [Java](./code/lc212.java) | 30 ok
 | 215  | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) |Medium| [Java](./code/lc215.java) | 29 ok
 | 217  | [Contains Duplicate]() | Easy | [Java](./code/lc217.java) | emmmm
