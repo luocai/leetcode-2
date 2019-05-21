@@ -93,9 +93,9 @@
 | 189  | [Rotate Array]() | Easy | [Java](./code/lc189.java)
 | 190  | [Reverse Bits]() | Easy | [Java](./code/lc190.java)
 | 191  | [Number of 1 Bits]() | Easy | [Java](./code/lc191.java)
-| 198  | [House Robber](https://leetcode.com/problems/house-robber/)  | Easy | [Java](./code/lc198.java)
-| 200  | [Number of Islands](https://leetcode.com/problems/number-of-islands/) |Medium| [Java](./code/lc200.java)
-| 202  | [Happy Number]() | Easy | [Java](./code/lc202.java)
+| 198  | [House Robber](https://leetcode.com/problems/house-robber/)  | Easy | [Java](./code/lc198.java) | 37 ok
+| 200  | [Number of Islands](https://leetcode.com/problems/number-of-islands/) |Medium| [Java](./code/lc200.java) | 36 ok
+| 202  | [Happy Number]() | Easy | [Java](./code/lc202.java) | 35 ok
 | 204  | [Count Primes]() | Easy | [Java](./code/lc204.java) | 34 ok
 | 206  | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Easy |[Java](./code/lc206.java) | 33 ok
 | 207  | [Course Schedule](https://leetcode.com/problems/course-schedule/) |Medium|[Java](./code/lc207.java) | 32 ok
