@@ -9,6 +9,24 @@ package code;
  */
 public class lc191 {
     // you need to treat n as an unsigned value
+    
+    public int hammingWeight(int n) {
+        
+        //00000000000000000000000000001011
+        //00000000000000000000000000001010
+       int count = 0;
+        while(n != 0)
+        {
+            count++;
+            // 使用 n=n&(n-1) 可以除去最左边的1  可以避免无效的移位
+            // 每减一位可以 得到一个不同的
+            n=n&(n-1);
+        }
+        return count;
+    }
+    
+    
+    -----------------------
     public int hammingWeight(int n) {
         int sum = 0;
         int a = 1;
