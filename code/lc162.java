@@ -8,6 +8,26 @@ package code;
  * Tips：
  */
 public class lc162 {
+    
+    //规律一：如果nums[i] > nums[i+1]，则在i之前一定存在峰值元素
+    //规律二：如果nums[i] < nums[i+1]，则在i+1之后一定存在峰值元素
+    public int findPeakElement(int[] nums) {
+        
+        int left = 0, right = nums.length-1;
+        
+        while(left < right){
+            int m = left + (right - left) / 2;
+            
+            if(nums[m] < nums[m+1]){
+                left = m + 1;
+            }else{
+                right = m;
+            }
+        }
+        return left;
+    }
+    
+    ------------------
     public int findPeakElement(int[] nums) {
         int[] nums2 = new int[nums.length+2];   //左右加了个最小值
         for (int i = 0; i < nums.length ; i++) {
