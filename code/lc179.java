@@ -25,6 +25,7 @@ public class lc179 {
                 return s2.compareTo(s1);
             }
         });
+        // 要注意这里
         if(strs[0].equals("0")) return "0";     //防止"000"的情况
         String res = "";
         for (String str:strs) {
