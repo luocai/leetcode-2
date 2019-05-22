@@ -8,6 +8,17 @@ package code;
  * Tips：题目看似简单，没做过的话不好想
  */
 public class lc172 {
+    
+     //为2的因子a数总是比为5的因子数多,有多少个因子5就有多少个0
+    public int trailingZeroes(int n) {
+        int res = 0;
+        while(n > 0){
+            res += n / 5;
+            n /= 5;
+        }
+        return res;
+    }
+    
     public int trailingZeroes(int n) {
         if(n==0) return 0;
         return n/5 + trailingZeroes(n/5);
