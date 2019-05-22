@@ -83,9 +83,9 @@
 | 152  | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) |Medium| [Java](./code/lc152.java)
 | 155  | [Min Stack](https://leetcode.com/problems/min-stack/)  | Easy | [Java](./code/lc155.java)
 | 160  | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Easy | [Java](./code/lc160.java)
-| 162  | [Find Peak Element]() | Medium | [Java](./code/lc162.java)
+| 162  | [Find Peak Element]() | Medium | [Java](./code/lc162.java) 
 | 163  | [Missing Ranges](https://leetcode.com/problems/missing-ranges) | Medium | [没权限]
-| 166  | [Fraction to Recurring Decimal]() | Medium | [Java](./code/lc166.java)
+| 166  | [Fraction to Recurring Decimal]() | Medium | [Java](./code/lc166.java) | 44 ok
 | 169  | [Majority Element](https://leetcode.com/problems/majority-element/) | Easy | [Java](./code/lc169.java) | 43 ok
 | 171  | [Excel Sheet Column Number]() | Easy | [Java](./code/lc171.java) | emmm
 | 172  | [Factorial Trailing Zeroes]() | Easy | [Java](./code/lc172.java) | 42 ok
