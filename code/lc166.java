@@ -13,6 +13,51 @@ import java.util.HashMap;
  * Tips：看似简单的题，并不好写
  */
 public class lc166 {
+    
+    //有点难，思路
+     public String fractionToDecimal(int numerator, int denominator) {
+        
+        StringBuilder sb = new StringBuilder();
+        // 这样会溢出
+        //if(numerator * denominator < 0)
+        //   sb.append("-");
+        
+        if( (numerator>0&&denominator<0) || (numerator<0&&denominator>0)) 
+            sb.append("-");   //符号
+        
+        long a = Math.abs((long) numerator);
+        long b = Math.abs((long) denominator);
+        
+        // 整数部分
+        sb.append( a / b);
+        
+        long m = a % b;
+        // 如果有余数，说明有小数部分
+        if(m != 0)
+            sb.append(".");
+        
+        // key 是 余数， value是 length
+        Map<Long, Integer> map = new HashMap();
+        
+        // 余数为0（除尽） 余数出现过（出现循环）
+        while(m != 0 && !map.containsKey(m)){
+            map.put(m, sb.length());
+            // 模仿除法操作 ，补0
+            m *= 10;
+            sb.append(m / b );
+            m %= b;
+        }
+        
+        if(map.containsKey(m)){
+            int index = map.get(m);
+            sb.insert(index,"(");
+            sb.append(")");
+        }
+        return sb.toString();
+    }
+    
+    
+    --------------------------------
     public String fractionToDecimal(int numerator, int denominator) {
         StringBuilder sb = new StringBuilder();
         if( (numerator>0&&denominator<0) || (numerator<0&&denominator>0)) sb.append("-");   //符号
