@@ -86,9 +86,9 @@
 | 162  | [Find Peak Element]() | Medium | [Java](./code/lc162.java)
 | 163  | [Missing Ranges](https://leetcode.com/problems/missing-ranges) | Medium | [没权限]
 | 166  | [Fraction to Recurring Decimal]() | Medium | [Java](./code/lc166.java)
-| 169  | [Majority Element](https://leetcode.com/problems/majority-element/) | Easy | [Java](./code/lc169.java)
-| 171  | [Excel Sheet Column Number]() | Easy | [Java](./code/lc171.java)
-| 172  | [Factorial Trailing Zeroes]() | Easy | [Java](./code/lc172.java)
+| 169  | [Majority Element](https://leetcode.com/problems/majority-element/) | Easy | [Java](./code/lc169.java) | 43 ok
+| 171  | [Excel Sheet Column Number]() | Easy | [Java](./code/lc171.java) | emmm
+| 172  | [Factorial Trailing Zeroes]() | Easy | [Java](./code/lc172.java) | 42 ok
 | 179  | [Largest Number]() | Medium | [Java](./code/lc179.java) | 41 ok
 | 189  | [Rotate Array]() | Easy | [Java](./code/lc189.java) | 40 ok
 | 190  | [Reverse Bits]() | Easy | [Java](./code/lc190.java) | 39 ok
