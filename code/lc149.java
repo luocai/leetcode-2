@@ -11,6 +11,65 @@ import java.util.HashMap;
  * Tips：
  */
 public class lc149 {
+    
+    
+     // 用二维哈希 存储 （x,y,count） x,y是斜率
+    public int maxPoints(int[][] points) {
+        
+        if(points.length < 3)
+            return points.length;
+        
+       // Map<Integer, Map<Integer, Integer>> map = new HashMap();
+        int res = 0;
+        
+        for(int i = 0; i < points.length - 1; i++){
+            // 注意定义的位置
+            Map<Integer, Map<Integer, Integer>> map = new HashMap();
+            int repeat = 1; // 重复点的个数
+            int max = 0;  // 和 i点 斜率在一条线上最多的点
+            for(int j = i+1; j < points.length; j++){
+                
+                int x = points[i][0] - points[j][0];
+                int y = points[i][1] - points[j][1];
+                
+                if(x == 0 && y == 0){
+                    repeat++;
+                    continue;
+                }
+                
+                int gcd = getGCD(x, y);
+                // 避免除0异常
+                if(gcd != 0){
+                    x /= gcd;
+                    y /= gcd;
+                }
+                
+                // 计算 斜率为 （x/y）的点的个数
+                Map<Integer, Integer> map2 = map.getOrDefault(x, new HashMap());
+                map2.put(y, map2.getOrDefault(y,0)+1);
+                map.put(x, map2);
+                
+                // 更新max
+                max = Math.max(max, map2.get(y));
+            }
+            res = Math.max(res, max + repeat);
+        }
+        return res;
+            
+    }
+    
+    // 通过最小公因数来存储斜率
+    public int getGCD(int x, int y){
+        if (y == 0)
+            return x;
+        return getGCD(y, x % y);
+    }
+    
+    
+    
+    ---------------------------------------------
+    
+   //通过保存两个整数除以它们的最大公约数之后的值来代替除法，避免造成精度丢失。
     class Point {
         int x;
         int y;
