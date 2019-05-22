@@ -79,11 +79,11 @@
 | 146  | [LRU Cache](https://leetcode.com/problems/lru-cache/)  | Hard | [Java](./code/lc146.java)
 | 148  | [Sort List](https://leetcode.com/problems/sort-list/)  |Medium| [Java](./code/lc148.java)
 | 149  | [Max Points on a Line]() | Hard | [Java](./code/lc149.java)
-| 150  | [Evaluate Reverse Polish Notation]() | Medium | [Java](./code/lc150.java)
-| 152  | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) |Medium| [Java](./code/lc152.java)
-| 155  | [Min Stack](https://leetcode.com/problems/min-stack/)  | Easy | [Java](./code/lc155.java)
-| 160  | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Easy | [Java](./code/lc160.java)
-| 162  | [Find Peak Element]() | Medium | [Java](./code/lc162.java) 
+| 150  | [Evaluate Reverse Polish Notation]() | Medium | [Java](./code/lc150.java) | 49 ok
+| 152  | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) |Medium| [Java](./code/lc152.java) | 48 ok
+| 155  | [Min Stack](https://leetcode.com/problems/min-stack/)  | Easy | [Java](./code/lc155.java) | 47 ok
+| 160  | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Easy | [Java](./code/lc160.java) | 46 ok
+| 162  | [Find Peak Element]() | Medium | [Java](./code/lc162.java) | 45
 | 163  | [Missing Ranges](https://leetcode.com/problems/missing-ranges) | Medium | [没权限]
 | 166  | [Fraction to Recurring Decimal]() | Medium | [Java](./code/lc166.java) | 44 ok
 | 169  | [Majority Element](https://leetcode.com/problems/majority-element/) | Easy | [Java](./code/lc169.java) | 43 ok
