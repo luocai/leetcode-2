@@ -66,7 +66,7 @@
 | 122  | [Best Time to Buy and Sell Stock II]() | Easy | [Java](./code/lc122].java)
 | 124  | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | Hard | [Java](./code/lc124.java)
 | 125  | [Valid Palindrome]() | Easy | [Java](./code/lc125.java)
-| 127  | [Word Ladder]() | Medium | [Java](./code/lc127.java)
+| 127  | [Word Ladder]() | Medium | [Java](./code/lc127.java) | 61 ok
 | 128  | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Hard | [Java](./code/lc128.java)
 | 130  | [Surrounded Regions]() | Medium | [Java](./code/lc130.java) | 60 ok
 | 131  | [Palindrome Partitioning]() | Medium | [Java](./code/lc131.java) | 59 ok
