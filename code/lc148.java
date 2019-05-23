@@ -14,6 +14,62 @@ public class lc148 {
         ListNode(int x) { val = x; }
     }
 
+
+    // 经典的呢 , 注意如何寻找链表的终点
+    public ListNode sortList(ListNode head) {
+        
+        if(head == null || head.next == null)
+            return head;
+        
+        ListNode slow = head ,fast = head;
+        while(fast.next != null && fast.next.next!= null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+       // 1 2 3 4 5
+        
+        ListNode rhead = slow.next;
+        slow.next = null ; // 断开
+        
+       
+        ListNode left = sortList(head);
+        ListNode right = sortList(rhead);
+      
+        
+        return merge(left, right);
+        
+    }
+    
+    public ListNode merge(ListNode l, ListNode r){
+        
+        ListNode res = new ListNode(0);
+        ListNode cur = res;
+        
+        while(l!= null && r != null){
+            if(l.val < r.val){
+                cur.next = l;
+                l = l.next;
+                cur = cur.next;
+               
+            }else{
+                cur.next = r;
+                r = r.next;
+                cur = cur.next;
+               
+            }
+        }
+        
+        if(l != null)
+            cur.next = l;
+        if(r != null)
+            cur.next = r;
+        
+      
+        return res.next;
+        
+    }
+
+---------------------
     public ListNode sortList(ListNode head) {
         
         if(head == null || head.next == null)
