@@ -72,12 +72,12 @@
 | 131  | [Palindrome Partitioning]() | Medium | [Java](./code/lc131.java)
 | 134  | [Gas Station]() | Medium | [Java](./code/lc134.java)
 | 136  | [Single Number](https://leetcode.com/problems/single-number) | Easy | [Java](./code/lc136.java) 
-| 138  | [Copy List with Random Pointer]() | Medium | [Java](./code/lc138.java)
-| 139  | [Word Break](https://leetcode.com/problems/word-break/) |Medium| [Java](./code/lc139.java)
-| 140  | [Word Break II]() | Hard | [Java](./code/lc140.java)
-| 141  | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Easy | [Java](./code/lc141.java)
-| 146  | [LRU Cache](https://leetcode.com/problems/lru-cache/)  | Hard | [Java](./code/lc146.java)
-| 148  | [Sort List](https://leetcode.com/problems/sort-list/)  |Medium| [Java](./code/lc148.java)
+| 138  | [Copy List with Random Pointer]() | Medium | [Java](./code/lc138.java) | 56 ok
+| 139  | [Word Break](https://leetcode.com/problems/word-break/) |Medium| [Java](./code/lc139.java) | 55 ok
+| 140  | [Word Break II]() | Hard | [Java](./code/lc140.java) | 54 ok
+| 141  | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Easy | [Java](./code/lc141.java) | 53 ok
+| 146  | [LRU Cache](https://leetcode.com/problems/lru-cache/)  | Hard | [Java](./code/lc146.java) | 52 ok
+| 148  | [Sort List](https://leetcode.com/problems/sort-list/)  |Medium| [Java](./code/lc148.java) | 51 ok
 | 149  | [Max Points on a Line]() | Hard | [Java](./code/lc149.java) | 50 ok
 | 150  | [Evaluate Reverse Polish Notation]() | Medium | [Java](./code/lc150.java) | 49 ok
 | 152  | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) |Medium| [Java](./code/lc152.java) | 48 ok
