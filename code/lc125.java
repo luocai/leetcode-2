@@ -9,6 +9,33 @@ package code;
  *       lc234, lc5
  */
 public class lc125 {
+    
+     public boolean isPalindrome(String s) {
+        
+        int l = 0, r = s.length()-1;
+         // 注意啦
+         s = s.toLowerCase();  
+        while(l < r){
+          
+            // 是
+            while(l < r && !isZiMu(s.charAt(l)))
+                l++;
+            while(l < r && !isZiMu(s.charAt(r)))
+                r--;
+            
+            if(s.charAt(l) != s.charAt(r))
+                return false;
+            l++;
+            r--; 
+        }
+        return true;
+    }
+    
+    public boolean isZiMu(char a){
+        return (a >= 'a' && a <= 'z') ||  (a >= '0' && a <= '9');
+    }
+    
+    -------------------------------
     public static void main(String[] args) {
         System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
     }
