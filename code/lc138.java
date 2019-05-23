@@ -9,6 +9,40 @@ package code;
  * Tips：因为需要每步骤返回值，所以递归的方法在这题更合适
  */
 public class lc138 {
+    
+     public Node copyRandomList(Node head) {
+        
+        if(head == null)
+            return null;
+        Node cur = head;
+        // 克隆节点在每个节点后面
+        while(cur != null){
+            Node clone = new Node(cur.val,cur.next, null);
+            Node temp = cur.next;
+            cur.next = clone;
+            cur = temp;
+        }
+        
+        // 处理random指针 ， 注意判空
+        cur = head;
+        while(cur != null){
+            cur.next.random = cur.random == null ? null : cur.random.next;
+            cur = cur.next.next;
+        }
+        
+        // 还原原始链表，即分离原链表和克隆链表
+        cur = head;
+        Node res = head.next;
+        while(cur.next != null){
+            Node temp = cur.next;
+            cur.next = cur.next.next;
+            cur = temp;
+        }
+        
+        return res;
+    }
+    
+    ------------------------
     class RandomListNode {
         int label;
         RandomListNode next, random;
