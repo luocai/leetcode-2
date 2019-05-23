@@ -8,6 +8,29 @@ package code;
  * Tips：lc53
  */
 public class lc134 {
+    // 思路很巧妙
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        
+        int start = 0, total = 0, sum = 0;
+        
+        for(int i = 0; i < gas.length ;i++){
+            total += (gas[i] - cost[i]);
+            sum += ( gas[i] - cost[i]);
+            if(sum < 0){
+                sum = 0;
+                // i+1 ， 因为i 不能满足
+                start = i + 1;
+            }
+        }
+        
+        // 如果加油总量小于消耗总量，比如走不完，否则可以
+        if(total < 0)
+            return -1;
+        else
+            return start;
+    }
+    
+    ---------------------
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int[] arr = new int[gas.length];
         int sum = 0, pos = 0, dp =0;
