@@ -68,10 +68,10 @@
 | 125  | [Valid Palindrome]() | Easy | [Java](./code/lc125.java)
 | 127  | [Word Ladder]() | Medium | [Java](./code/lc127.java)
 | 128  | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Hard | [Java](./code/lc128.java)
-| 130  | [Surrounded Regions]() | Medium | [Java](./code/lc130.java)
-| 131  | [Palindrome Partitioning]() | Medium | [Java](./code/lc131.java)
-| 134  | [Gas Station]() | Medium | [Java](./code/lc134.java)
-| 136  | [Single Number](https://leetcode.com/problems/single-number) | Easy | [Java](./code/lc136.java) 
+| 130  | [Surrounded Regions]() | Medium | [Java](./code/lc130.java) | 60 ok
+| 131  | [Palindrome Partitioning]() | Medium | [Java](./code/lc131.java) | 59 ok
+| 134  | [Gas Station]() | Medium | [Java](./code/lc134.java) | 58 ok
+| 136  | [Single Number](https://leetcode.com/problems/single-number) | Easy | [Java](./code/lc136.java)  | 57 ok
 | 138  | [Copy List with Random Pointer]() | Medium | [Java](./code/lc138.java) | 56 ok
 | 139  | [Word Break](https://leetcode.com/problems/word-break/) |Medium| [Java](./code/lc139.java) | 55 ok
 | 140  | [Word Break II]() | Hard | [Java](./code/lc140.java) | 54 ok
