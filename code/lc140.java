@@ -12,6 +12,44 @@ import java.util.List;
  * Tips：和139做对比，因为需要每步骤返回值，所以递归的方法在这题更合适
  */
 public class lc140 {
+    
+    //记忆化
+    Map<String, List<String>> cache = new HashMap();
+    
+    // 直接dfs会超时，需要增加记忆化搜索
+    public List<String> wordBreak(String s, List<String> wordDict) {
+        
+        // 如果缓存中有，直接返回
+        if(cache.containsKey(s))
+            return cache.get(s);
+        
+        List<String> res = new ArrayList();
+        
+        // 不分割 
+        if(wordDict.contains(s)){
+            res.add(s);    
+        }
+        
+        // 进行分割  str + (i,length)的分割结果进行合并
+        for(int i = 1; i < s.length() ;i++){
+            String str = s.substring(0,i);
+            if(wordDict.contains(str)){
+                List<String> tr = wordBreak(s.substring(i), wordDict);
+                //合并分割结果
+                for(String ts : tr){
+                    res.add(str + " " + ts);
+                }
+            }
+        }
+        
+        //放入缓存
+        cache.put(s, res);
+        return res;
+    }
+    
+    
+    
+    ----------------------------
     public List<String> wordBreak(String s, List<String> wordDict) {
         List<String> res = new ArrayList<>();
         if(s.length()==0) return res;
