@@ -47,6 +47,7 @@ public class lc105 {
         }
         
         node.left = solution(pre, index+1, in, is, is+mark-1);
+        // 注意 第二个参数 是 index+mark+1， 因为pre也要走
         node.right = solution(pre, index+mark+1, in, is+mark+1, ie);
         
         return node;
