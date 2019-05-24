@@ -59,7 +59,7 @@
 | 103  | [Binary Tree Zigzag Level Order Traversal]() | Medium | [Java](./code/lc103.java)
 | 104  | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Easy | [Java](./code/lc104.java)
 | 105  | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |Medium| [Java](./code/lc105.java)
-| 108  | [Convert Sorted Array to Binary Search Tree]() | Easy | [Java](./code/lc108.java)
+| 108  | [Convert Sorted Array to Binary Search Tree]() | Easy | [Java](./code/lc108.java) | 68 ok
 | 116  | [Populating Next Right Pointers in Each Node ]() | Medium | [Java](./code/lc116.java) | 67 ok
 | 118  | [Pascal's Triangle]() | Easy | [Java](./code/lc118.java) | 66 ok
 | 121  | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | [Java](./code/lc121.java) | 65 ok
