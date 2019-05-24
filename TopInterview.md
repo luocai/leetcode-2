@@ -65,9 +65,9 @@
 | 121  | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | [Java](./code/lc121.java)
 | 122  | [Best Time to Buy and Sell Stock II]() | Easy | [Java](./code/lc122].java)
 | 124  | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | Hard | [Java](./code/lc124.java)
-| 125  | [Valid Palindrome]() | Easy | [Java](./code/lc125.java)
-| 127  | [Word Ladder]() | Medium | [Java](./code/lc127.java) | 61 ok
-| 128  | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Hard | [Java](./code/lc128.java)
+| 125  | [Valid Palindrome]() | Easy | [Java](./code/lc125.java) | 62 ok
+| 127  | [Word Ladder]() | Medium | [Java](./code/lc127.java) | 
+| 128  | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Hard | [Java](./code/lc128.java) | 61 ok
 | 130  | [Surrounded Regions]() | Medium | [Java](./code/lc130.java) | 60 ok
 | 131  | [Palindrome Partitioning]() | Medium | [Java](./code/lc131.java) | 59 ok
 | 134  | [Gas Station]() | Medium | [Java](./code/lc134.java) | 58 ok
