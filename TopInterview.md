@@ -54,8 +54,8 @@
 | 091  | [Decode Ways]() | Medium | [Java](./code/lc91.java)
 | 094  | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) |Medium| [Java](./code/lc94.java)
 | 098  | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) |Medium| [Java](./code/lc98.java)
-| 101  | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [Java](./code/lc101.java)
-| 102  | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Easy | [Java](./code/lc102.java)
+| 101  | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [Java](./code/lc101.java) | 73 ok
+| 102  | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Easy | [Java](./code/lc102.java) | 72 ok
 | 103  | [Binary Tree Zigzag Level Order Traversal]() | Medium | [Java](./code/lc103.java) | 71 0k
 | 104  | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Easy | [Java](./code/lc104.java) | 70 ok
 | 105  | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |Medium| [Java](./code/lc105.java) | 69 ok
