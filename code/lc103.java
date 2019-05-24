@@ -14,6 +14,56 @@ import java.util.Queue;
 
 public class lc103 {
 
+    //巧妙哟
+     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList();
+        if(root == null)
+            return res;
+        
+        LinkedList<TreeNode> queue = new LinkedList();
+        
+        //null表示每一层的分界线
+        queue.add(null);
+        queue.add(root);
+        
+        //标志往左还是往右
+        boolean flag = true; 
+        while(queue.size() > 1){
+            //取出队头
+            TreeNode node = queue.poll();
+            
+            //是null说明一层结束了，要开始取数据了
+            if(node == null){
+                List<Integer> tr = new ArrayList();
+                Iterator<TreeNode> it = null;
+                
+                if(flag)
+                    it = queue.iterator();
+                else
+                    it = queue.descendingIterator();
+                
+                //取数据
+                while(it.hasNext()){
+                    tr.add(it.next().val);
+                }
+                
+                res.add(tr);
+                //不要忘记增加标志位
+                queue.add(null);
+                flag = !flag;
+                
+            }else{
+                if(node.left != null)
+                    queue.add(node.left);
+                if(node.right != null)
+                    queue.add(node.right);
+            }
+        }
+        return res;
+    }
+    
+    
+    ------------------------------
     public class TreeNode {
         int val;
         TreeNode left;
