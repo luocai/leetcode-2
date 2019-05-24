@@ -61,10 +61,10 @@
 | 105  | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |Medium| [Java](./code/lc105.java)
 | 108  | [Convert Sorted Array to Binary Search Tree]() | Easy | [Java](./code/lc108.java)
 | 116  | [Populating Next Right Pointers in Each Node ]() | Medium | [Java](./code/lc116.java)
-| 118  | [Pascal's Triangle]() | Easy | [Java](./code/lc118.java)
-| 121  | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | [Java](./code/lc121.java)
-| 122  | [Best Time to Buy and Sell Stock II]() | Easy | [Java](./code/lc122].java)
-| 124  | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | Hard | [Java](./code/lc124.java)
+| 118  | [Pascal's Triangle]() | Easy | [Java](./code/lc118.java) | 66 
+| 121  | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | [Java](./code/lc121.java) | 65 ok
+| 122  | [Best Time to Buy and Sell Stock II]() | Easy | [Java](./code/lc122].java) | 64 ok
+| 124  | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | Hard | [Java](./code/lc124.java) | 63 ok
 | 125  | [Valid Palindrome]() | Easy | [Java](./code/lc125.java) | 62 ok
 | 127  | [Word Ladder]() | Medium | [Java](./code/lc127.java) | 
 | 128  | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Hard | [Java](./code/lc128.java) | 61 ok
