@@ -8,6 +8,27 @@ package code;
  * Tips：复习时多看一下，自己没想起来利用已经设置好的指针
  */
 public class lc116 {
+    
+    // 巧妙
+    public Node connect(Node root) {
+        
+        if(root == null)
+            return null;
+        
+        if(root.left != null)
+            root.left.next = root.right;
+        
+        connect(root.left);
+        //这个要注意啦
+        if(root.right != null && root.next != null)
+            root.right.next = root.next.left;
+        
+        connect(root.right);
+        return root;
+    }
+    
+    
+    -----------------------
     public class TreeLinkNode {
         int val;
         TreeLinkNode left, right, next;
