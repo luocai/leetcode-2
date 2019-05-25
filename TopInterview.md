@@ -47,9 +47,9 @@
 | 073  | [Set Matrix Zeroes]() | Medium | [Java](./code/lc73.java)
 | 075  | [Sort Colors](https://leetcode.com/problems/sort-colors/)|Medium| [Java](./code/lc75.java)
 | 076  | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring) | Hard| [Java](./code/lc76.java)
-| 078  | [Subsets](https://leetcode.com/problems/subsets/) |Medium| [Java](./code/lc78.java)
-| 079  | [Word Search](https://leetcode.com/problems/word-search/)|Medium| [Java](./code/lc79.java)
-| 084  | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram) | Hard | [Java](./code/lc84.java)
+| 078  | [Subsets](https://leetcode.com/problems/subsets/) |Medium| [Java](./code/lc78.java) | 80 ok
+| 079  | [Word Search](https://leetcode.com/problems/word-search/)|Medium| [Java](./code/lc79.java) | 79 ok
+| 084  | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram) | Hard | [Java](./code/lc84.java) | 78 ok
 | 088  | [Merge Sorted Array]() | Easy | [Java](./code/lc88.java) | 77 ok
 | 091  | [Decode Ways]() | Medium | [Java](./code/lc91.java) | 76 ok
 | 094  | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) |Medium| [Java](./code/lc94.java) | 75 ok
