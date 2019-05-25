@@ -50,10 +50,10 @@
 | 078  | [Subsets](https://leetcode.com/problems/subsets/) |Medium| [Java](./code/lc78.java)
 | 079  | [Word Search](https://leetcode.com/problems/word-search/)|Medium| [Java](./code/lc79.java)
 | 084  | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram) | Hard | [Java](./code/lc84.java)
-| 088  | [Merge Sorted Array]() | Easy | [Java](./code/lc88.java)
-| 091  | [Decode Ways]() | Medium | [Java](./code/lc91.java)
-| 094  | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) |Medium| [Java](./code/lc94.java)
-| 098  | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) |Medium| [Java](./code/lc98.java)
+| 088  | [Merge Sorted Array]() | Easy | [Java](./code/lc88.java) | 77 ok
+| 091  | [Decode Ways]() | Medium | [Java](./code/lc91.java) | 76 ok
+| 094  | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) |Medium| [Java](./code/lc94.java) | 75 ok
+| 098  | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) |Medium| [Java](./code/lc98.java) | 74 ok
 | 101  | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [Java](./code/lc101.java) | 73 ok
 | 102  | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Easy | [Java](./code/lc102.java) | 72 ok
 | 103  | [Binary Tree Zigzag Level Order Traversal]() | Medium | [Java](./code/lc103.java) | 71 0k
