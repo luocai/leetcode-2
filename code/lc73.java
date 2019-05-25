@@ -10,6 +10,39 @@ package code;
  *       思路是很简单，但有许多细节
  */
 public class lc73 {
+    //还挺好的呢
+    public void setZeroes(int[][] matrix) {
+        
+        // 用两个set分别存放 为0的行和列
+        Set<Integer> rset = new HashSet();
+        Set<Integer> cset = new HashSet();
+        
+        for(int i = 0; i < matrix.length ;i++){
+            for(int j = 0; j < matrix[0].length ; j++){
+                
+                if(matrix[i][j] == 0){
+                    rset.add(i);
+                    cset.add(j);
+                }
+            }
+        }
+        
+        // 对行和列进行处理
+        for(int i : rset){
+            for(int j = 0; j < matrix[0].length ;j++){
+                matrix[i][j] = 0;
+            }
+        }
+        
+        for(int j : cset){
+            for(int i = 0; i < matrix.length ;i++){
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    
+    -----------------------------
+        
     public void setZeroes(int[][] matrix) {
         boolean col0 = false;   //因为 matrix[0][0] 只有一个位置，所以用一个变量单独记录
         for (int i = 0; i < matrix.length ; i++) {
