@@ -37,7 +37,7 @@ public class lc72 {
                     
                     // dp[i-1][j-1]+1  替换 word1.charAt(i-1);
                     // dp[i][j-1]+1  删除word1.charAt(i-1) word1向前走一步
-                    // dp[i-1][j] + 1 删除word2.charAt(i-1) word2向前走一步  或者 在word这个位置前面插入一个
+                    // dp[i-1][j] + 1 删除word2.charAt(i-1) word2向前走一步  或者 在word1的i-1前面插入一个，让他和j-1匹配，然后j向前走一格，i不变。这个位置前面插入一个
                     dp[i][j] = Math.min(dp[i-1][j-1]+1, Math.min(dp[i][j-1]+1, dp[i-1][j]+1));
                     
                 }
