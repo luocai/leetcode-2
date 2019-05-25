@@ -7,6 +7,30 @@ package code;
  * 注意：实际上 nums1.length = m+n , 不会>m+n ,题意没说清楚. 用一个指针指向nums的末端，从后往前走
  */
 public class lc88 {
+    
+    
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        int i = m-1 , j = n-1;
+        
+        int s = m+n -1;
+        
+        while(i >= 0 && j >= 0){
+            
+            if(nums1[i] > nums2[j]){
+                nums1[s--] = nums1[i--]; 
+            }else{
+                nums1[s--] = nums2[j--];
+            }
+        }
+        
+        while( j>= 0){
+            nums1[s--] = nums2[j--];
+        }
+        
+    }
+    
+    -----------------------
     public static void main(String[] args) {
         int[] nums1 = {4,5,6,0,0,0};
         int[] nums2 = {1,2,3};
