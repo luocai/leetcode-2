@@ -45,7 +45,7 @@
 | 069  | [Sqrt(x)]() | Easy | [Java](./code/lc69.java)
 | 070  | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | Easy | [Java](./code/lc70.java)
 | 073  | [Set Matrix Zeroes]() | Medium | [Java](./code/lc73.java)
-| 075  | [Sort Colors](https://leetcode.com/problems/sort-colors/)|Medium| [Java](./code/lc75.java)
+| 075  | [Sort Colors](https://leetcode.com/problems/sort-colors/)|Medium| [Java](./code/lc75.java) | 81 ok
 | 076  | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring) | Hard| [Java](./code/lc76.java)
 | 078  | [Subsets](https://leetcode.com/problems/subsets/) |Medium| [Java](./code/lc78.java) | 80 ok
 | 079  | [Word Search](https://leetcode.com/problems/word-search/)|Medium| [Java](./code/lc79.java) | 79 ok
