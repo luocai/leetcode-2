@@ -34,8 +34,8 @@
 | 044  | [Wildcard Matching]() | Hard | [Java](./code/lc44.java)
 | 046  | [Permutations](https://leetcode.com/problems/permutations/)  |Medium| [Java](./code/lc46.java)
 | 048  | [Rotate Image](https://leetcode.com/problems/rotate-image/)  |Medium| [Java](./code/lc48.java)
-| 049  | [Group Anagrams](https://leetcode.com/problems/anagrams/)|Medium| [Java](./code/lc49.java)
-| 050  | [Pow(x, n)]() | Medium | [Java](./code/lc50.java)
+| 049  | [Group Anagrams](https://leetcode.com/problems/anagrams/)|Medium| [Java](./code/lc49.java) | 92 ok
+| 050  | [Pow(x, n)]() | Medium | [Java](./code/lc50.java) | 91 ok
 | 053  | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) |Medium| [Java](./code/lc53.java) | 90 ok
 | 054  | [Spiral Matrix]() | Medium | [Java](./code/lc54.java) | 89 ok
 | 055  | [Jump Game](https://leetcode.com/problems/jump-game/)  |Medium| [Java](./code/lc55.java) | 88 ok
