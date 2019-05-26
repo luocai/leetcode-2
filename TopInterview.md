@@ -32,8 +32,8 @@
 | 041  | [First Missing Positive]() | Hard | [Java](./code/lc41.java)
 | 042  | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | [Java](./code/lc42.java)
 | 044  | [Wildcard Matching]() | Hard | [Java](./code/lc44.java)
-| 046  | [Permutations](https://leetcode.com/problems/permutations/)  |Medium| [Java](./code/lc46.java)
-| 048  | [Rotate Image](https://leetcode.com/problems/rotate-image/)  |Medium| [Java](./code/lc48.java)
+| 046  | [Permutations](https://leetcode.com/problems/permutations/)  |Medium| [Java](./code/lc46.java) | 94 ok
+| 048  | [Rotate Image](https://leetcode.com/problems/rotate-image/)  |Medium| [Java](./code/lc48.java) | 93 ok
 | 049  | [Group Anagrams](https://leetcode.com/problems/anagrams/)|Medium| [Java](./code/lc49.java) | 92 ok
 | 050  | [Pow(x, n)]() | Medium | [Java](./code/lc50.java) | 91 ok
 | 053  | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) |Medium| [Java](./code/lc53.java) | 90 ok
