@@ -23,6 +23,45 @@ public class lc56 {
 
 //    lambda 表达式
 //    intervals.sort((i1, i2) -> Integer.compare(i1.start, i2.start));
+	
+
+    public int[][] merge(int[][] intervals) {
+        
+        //[[2,3],[4,5],[6,7],[8,9],[1,10][12,14]]
+        //[[1,10]]
+        //[1,10]  [2,3]  [4,5] [6,7] [8,9] [12,14]
+        
+        // 贪心的思路
+        Arrays.sort(intervals, new Comparator<int[]>(){
+            
+            public int compare(int[] a, int[] b){
+                return a[0] - b[0];
+            }
+        });
+        
+        //count计数，多少被合并了
+        int count = 0;
+        for(int i = 0; i < intervals.length-1; i++){
+            
+            if(intervals[i][1] >= intervals[i+1][0]){
+                intervals[i+1][0] = intervals[i][0];
+                intervals[i+1][1] = Math.max(intervals[i][1],intervals[i+1][1]);
+                intervals[i] = null; //注意置空
+                count++;
+            }
+        }
+        
+        int[][] res = new int[intervals.length-count][2];
+        
+        for(int i = 0, k = 0; i < intervals.length ; i++){
+            if(intervals[i] != null){
+                res[k++] = intervals[i];
+            }
+        }
+        return res;
+    }
+	
+----------------------------------------------
 
     public class Interval {
         int start;
