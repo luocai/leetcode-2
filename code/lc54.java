@@ -11,6 +11,60 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class lc54 {
+
+
+    // 注意下这个思路
+ public List<Integer> spiralOrder(int[][] matrix) {
+        
+        List<Integer> res = new ArrayList();
+        
+        if(matrix.length == 0 || matrix[0].length == 0)
+            return res;
+        
+        int u = 0, d = matrix.length -1;
+        int l = 0, r = matrix[0].length-1;
+        
+        while(u <= d || l <= r){
+            
+            // 从左到右输出， 
+            if(u <= d){
+                for(int i = l; i <= r ;i++){
+                    res.add(matrix[u][i]);
+                }
+                u++;
+            }
+            
+            // 从上到下输出
+            if(l <=r){
+                for(int i = u; i <= d; i++){
+                    res.add(matrix[i][r]);
+                }
+                r--;
+            }
+            
+            // 从右到左输出
+            if(u<= d){
+                for(int i = r; i >= l; i--){
+                    res.add(matrix[d][i]);
+                }
+                d--;
+            }
+            
+            // 从下到上输出
+            if(l <= r){
+                for(int i = d; i >= u ;i--){
+                    res.add(matrix[i][l]);
+                }
+                l++;
+            }
+        }
+        
+        return res;
+    }
+    
+
+
+-----------------------
     public static void main(String[] args) {
         int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
         System.out.println(spiralOrder(matrix));
