@@ -36,8 +36,8 @@
 | 048  | [Rotate Image](https://leetcode.com/problems/rotate-image/)  |Medium| [Java](./code/lc48.java)
 | 049  | [Group Anagrams](https://leetcode.com/problems/anagrams/)|Medium| [Java](./code/lc49.java)
 | 050  | [Pow(x, n)]() | Medium | [Java](./code/lc50.java)
-| 053  | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) |Medium| [Java](./code/lc53.java)
-| 054  | [Spiral Matrix]() | Medium | [Java](./code/lc54.java)
+| 053  | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) |Medium| [Java](./code/lc53.java) | 90 ok
+| 054  | [Spiral Matrix]() | Medium | [Java](./code/lc54.java) | 89 ok
 | 055  | [Jump Game](https://leetcode.com/problems/jump-game/)  |Medium| [Java](./code/lc55.java) | 88 ok
 | 056  | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) |Medium| [Java](./code/lc56.java) | 87 ok
 | 062  | [Unique Paths](https://leetcode.com/problems/unique-paths/)  |Medium| [Java](./code/lc62.java) | 86 ok
