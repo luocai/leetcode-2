@@ -42,7 +42,7 @@
 | 056  | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) |Medium| [Java](./code/lc56.java)
 | 062  | [Unique Paths](https://leetcode.com/problems/unique-paths/)  |Medium| [Java](./code/lc62.java)
 | 066  | [Plus One]() | Easy | [Java](./code/lc66.java)
-| 069  | [Sqrt(x)]() | Easy | [Java](./code/lc69.java)
+| 069  | [Sqrt(x)]() | Easy | [Java](./code/lc69.java) | 84 ok
 | 070  | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | Easy | [Java](./code/lc70.java) | 83 ok
 | 073  | [Set Matrix Zeroes]() | Medium | [Java](./code/lc73.java) | 82 ok
 | 075  | [Sort Colors](https://leetcode.com/problems/sort-colors/)|Medium| [Java](./code/lc75.java) | 81 ok
