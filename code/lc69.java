@@ -7,6 +7,29 @@ package code;
  * 注意：返回的值是向下取整
  */
 public class lc69 {
+    
+     public int mySqrt(int x) {
+        
+        //l是1不是0
+        int l = 1, r = x;
+        
+        // 是<= 注意哦
+        while(l <= r){
+            int m = l + (r - l) / 2;
+            
+            if(m == x / m)
+                return m;
+            else if(m > x / m){
+                r = m - 1;
+            }else{
+                l = m + 1;
+            }
+        }
+        return r;
+    }
+    
+    ------------------------
+        
     public static void main(String[] args) {
         System.out.println(mySqrt(8));
     }
