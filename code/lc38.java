@@ -7,6 +7,44 @@ package code;
  * 注意：题意很难懂，读懂题意了就简单了
  */
 public class lc38 {
+    
+    public String countAndSay(int n) {
+        
+        String r = "1";
+        for(int i = 2; i <= n; i++){
+            
+            r = getNext(r);
+            System.out.println(r);
+        }
+        return r;
+    }
+    
+    public String getNext(String n){
+        
+        char v = n.charAt(0);
+        int c = 1;
+        
+        String res = "";
+        
+        for(int i = 1 ;i < n.length() ;i++){
+            
+            if(n.charAt(i) != v){
+                
+                res = res + String.valueOf(c) + v;
+                v = n.charAt(i);
+                c = 1;
+            }else{
+                c++;
+            }
+            
+        }
+        
+        res = res + String.valueOf(c) + v;
+        return res;
+    }
+    
+    ---------------------
+        
     public static void main(String[] args) {
         System.out.println(countAndSay(5));
     }
