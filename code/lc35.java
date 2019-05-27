@@ -14,6 +14,7 @@ public class lc35 {
         
         int l = 0, r = nums.length-1;
         
+        // 等号特别注意
         while(l <= r){
             int m = (l +r) / 2;
             
