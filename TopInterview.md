@@ -26,8 +26,8 @@
 | 029  | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers) | Medium | [Java](./code/lc29.java)
 | 033  | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) |Medium| [Java](./code/lc33.java)
 | 034  | [Search for a Range](https://leetcode.com/problems/search-for-a-range/) |Medium| [Java](./code/lc34.java)
-| 035  | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) |Medium| [Java](./code/lc35.java)
-| 036  | [Valid Sudoku]() | Medium | [Java](./code/lc36.java)
+| 035  | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) |Medium| [Java](./code/lc35.java) | ok
+| 036  | [Valid Sudoku]() | Medium | [Java](./code/lc36.java) | ok
 | 038  | [Count and Say]() | Easy | [Java](./code/lc38.java) | ok
 | 041  | [First Missing Positive]() | Hard | [Java](./code/lc41.java)
 | 042  | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | [Java](./code/lc42.java)
