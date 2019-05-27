@@ -27,6 +27,7 @@ public class lc34 {
     }
     
     // 先用二分找第一个出现的，注意 判断条件（一个等号的差别）
+    // 找第一个，  >=  return  l
     public int serachF(int[] nums,int target){
         
         int i = 0, j  = nums.length-1;
@@ -49,6 +50,7 @@ public class lc34 {
     }
     
      // 再用二分找最后一个出现的，注意 判断条件（一个等号的差别）
+   // 找最后一个，  <=  return  r
     public int serachE(int[] nums, int target){
         
         int i = 0, j  = nums.length-1;
