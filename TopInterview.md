@@ -30,8 +30,8 @@
 | 036  | [Valid Sudoku]() | Medium | [Java](./code/lc36.java) | ok
 | 038  | [Count and Say]() | Easy | [Java](./code/lc38.java) | ok
 | 041  | [First Missing Positive]() | Hard | [Java](./code/lc41.java)
-| 042  | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | [Java](./code/lc42.java)
-| 044  | [Wildcard Matching]() | Hard | [Java](./code/lc44.java)
+| 042  | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | [Java](./code/lc42.java) | 96 ok
+| 044  | [Wildcard Matching]() | Hard | [Java](./code/lc44.java) | 95 ok
 | 046  | [Permutations](https://leetcode.com/problems/permutations/)  |Medium| [Java](./code/lc46.java) | 94 ok
 | 048  | [Rotate Image](https://leetcode.com/problems/rotate-image/)  |Medium| [Java](./code/lc48.java) | 93 ok
 | 049  | [Group Anagrams](https://leetcode.com/problems/anagrams/)|Medium| [Java](./code/lc49.java) | 92 ok
