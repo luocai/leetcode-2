@@ -12,12 +12,15 @@ public class lc41 {
         int[] nums = {1,1};
         System.out.println(firstMissingPositive(nums));
     }
+    //归位大法
     public static int firstMissingPositive(int[] nums) {
         for (int i = 0; i < nums.length ; i++) {
-            if(nums[i]>0&&nums[i]<=nums.length&&nums[nums[i]-1]!=nums[i]){  //第三个判断条件判断要交换的位置上是否已经就为了，防止重复元素死循环
+            if(nums[i]>0&&nums[i]<=nums.length&&nums[nums[i]-1]!=nums[i]){  //第三个判断条件判断要交换的位置上是否已经就位了，防止重复元素死循环
                 int temp = nums[nums[i]-1];
                 nums[nums[i]-1] = nums[i];
                 nums[i] = temp;
+                
+                // 每次让 nums[i]归位，但是换过来的新nums[i] 不一定归位，所以要继续停留在这个位置，而不是跳到另一个位置
                 i--;
             }
         }
