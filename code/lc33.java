@@ -18,6 +18,11 @@ public class lc33 {
    //二分
    // 分为左边有序、右边有序
    public static int search(int[] nums, int target) {
+       
+       if(nums.length == 0)
+            return -1;
+       
+       
         int l = 0;
         int r = nums.length-1;
         while(l<r){
@@ -39,7 +44,7 @@ public class lc33 {
             }
         }
          
-       if(l==r && nums[l]==target){
+       if(nums[l]==target){
            return l;
         }
         return -1;
