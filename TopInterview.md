@@ -14,17 +14,17 @@
 | 011  | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) |Medium| [Java](./code/lc11.java)
 | 013  | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) |Easy| [Java](./code/lc13.java)
 | 014  | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix) |Easy| [Java](./code/lc14.java)
-| 015  | [3Sum](https://leetcode.com/problems/3sum/) | Medium | [Java](./code/lc15.java)
-| 017  | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Medium | [Java](./code/lc17.java)
-| 019  | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Easy | [Java](./code/lc19.java)
-| 020  | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy | [Java](./code/lc20.java)
-| 021  | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | Easy | [Java](./code/lc21.java)
-| 022  | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) |Medium| [Java](./code/lc22.java)
-| 023  | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Hard | [Java](./code/lc23.java)
-| 026  | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | Easy | [Java](./code/lc26.java)
-| 028  | [Implement strStr()](https://leetcode.com/problems/implement-strstr) | Easy | [Java](./code/lc28.java)
-| 029  | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers) | Medium | [Java](./code/lc29.java)
-| 033  | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) |Medium| [Java](./code/lc33.java)
+| 015  | [3Sum](https://leetcode.com/problems/3sum/) | Medium | [Java](./code/lc15.java) | 102 ok
+| 017  | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Medium | [Java](./code/lc17.java) | 111 ok
+| 019  | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Easy | [Java](./code/lc19.java) | 110 ok
+| 020  | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy | [Java](./code/lc20.java) | 109 ok
+| 021  | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | Easy | [Java](./code/lc21.java) | 108 ok
+| 022  | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) |Medium| [Java](./code/lc22.java) | 107 ok
+| 023  | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Hard | [Java](./code/lc23.java) | 106 ok
+| 026  | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | Easy | [Java](./code/lc26.java) | 105 ok
+| 028  | [Implement strStr()](https://leetcode.com/problems/implement-strstr) | Easy | [Java](./code/lc28.java) | 104 ok
+| 029  | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers) | Medium | [Java](./code/lc29.java) | 103 ok
+| 033  | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) |Medium| [Java](./code/lc33.java) | 102 ok
 | 034  | [Search for a Range](https://leetcode.com/problems/search-for-a-range/) |Medium| [Java](./code/lc34.java) | 101 ok
 | 035  | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) |Medium| [Java](./code/lc35.java) | 100 ok
 | 036  | [Valid Sudoku]() | Medium | [Java](./code/lc36.java) | 99 ok
