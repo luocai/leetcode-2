@@ -8,6 +8,35 @@ package code;
  *       最优的解法应该是O(N)的，类似KMP的思路，不过面试不会让写KMP的
  */
 public class lc28 {
+
+    public int strStr(String haystack, String needle) {
+        
+        if(needle.length() == 0)
+            return 0;
+        
+        int i = 0, j = 0;
+        
+        while( i < haystack.length()){
+            
+            while(j <  needle.length()){
+                
+                if (i>=haystack.length())
+	    			break ;
+                if(haystack.charAt(i) == needle.charAt(j)){
+                    i++;
+                    j++;
+                }else{
+                    i = i - j + 1;
+                    j = 0;
+                }
+            }
+            if(j == needle.length())
+                return i-j;
+        }
+        
+        return -1;
+    }
+
     public static void main(String[] args) {
         String haystack = "aaaaa";
         String needle = "ab";
