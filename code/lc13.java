@@ -7,6 +7,36 @@ package code;
  * 注意：如何解决6种反例，两种方式: (1)判断该位置上与下一位置上大小，决定加减. (2)如何字符串中包含该情况，减去误差
  */
 public class lc13 {
+    
+    // 注意代码风格哦
+    public int romanToInt(String s) {
+        
+        Map<Character, Integer> map = new HashMap();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L',50);
+        map.put('C',100);
+        map.put('D',500);
+        map.put('M',1000);
+        
+        int res = 0;
+        
+        for(int i = 0; i < s.length() ; i++){
+            if(i == s.length()-1 ){
+                res += map.get(s.charAt(i));
+                break;
+            }else if (map.get(s.charAt(i)) >= map.get(s.charAt(i+1))){
+                res += map.get(s.charAt(i));
+            }else{
+                res += (map.get(s.charAt(i+1)) - map.get(s.charAt(i)));
+                i++;
+            }
+        }
+        return res;
+    }
+    
+    -------------------------
     public static void main(String[] args) {
         String s = "IV";
         System.out.println(romanToInt(s));
