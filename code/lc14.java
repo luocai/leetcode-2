@@ -9,6 +9,37 @@ package code;
 import java.util.Arrays;
 
 public class lc14 {
+    
+    public String longestCommonPrefix(String[] strs) {
+        
+        if(strs.length < 1)
+            return "";
+        
+        // 字典序排序
+        Arrays.sort(strs);
+        
+        String res = "";
+        int i = 0;
+        
+        //只比较第一位和最后一个串
+        String s = strs[0];
+        String e = strs[strs.length-1];
+        
+        while(i < s.length() && i < e.length()){
+            if(s.charAt(i) == e.charAt(i))
+                i++;
+            else
+                break;
+        }
+        
+        res = s.substring(0,i);
+        
+        return res;
+        
+    }
+    
+    ---------------------------
+        
     public static String longestCommonPrefix(String[] strs) {   //不是最优的方法，多做了比较
         if(strs.length==0)
             return "";
