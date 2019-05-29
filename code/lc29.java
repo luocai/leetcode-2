@@ -8,6 +8,37 @@ package code;
  * Tips：注意下用long类型，以及溢出的情况，注意符号
  */
 public class lc29 {
+    
+     // 二分位运算
+    public int divide(int dividend, int divisor) {
+        
+        if(divisor==0||dividend==Integer.MIN_VALUE&&divisor==-1) 
+            return Integer.MAX_VALUE;  //溢出的话直接返回最小值
+        
+        //用异或来计算符号是否相同
+        boolean flag = (dividend ^ divisor) < 0; 
+        
+        long a = Math.abs((long)dividend);
+        long b = Math.abs((long)divisor);
+        
+        int res = 0;
+        // 100 / 3
+        // i = 5,  a / 32 = 3 >= b(3)
+        // res = 32   a = a - 3*32 = 4
+        // i == 4 3 2 1 0   a / 1  = 4 >= b(3)
+        // res = res + 1 = 33  a = a - 3 = 1;
+        for(int i= 31; i >= 0; i--){
+            if((a >> i) >= b){   // (a / 2^n ) > b
+                res += 1 << i;   //  res += 2^n
+                a -= b<<i;       //  a = a - 2^n*b
+            }
+        }
+        
+        return flag ? -res : res;
+    }
+    
+    
+    ---------------------
     public static void main(String[] args) {
         System.out.println(divide(-1010369383,-2147483648));
     }
