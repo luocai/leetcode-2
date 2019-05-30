@@ -11,15 +11,21 @@ public class lc7 {
         System.out.println(reverse(-987));
     }
 
-    public static int reverse(int x) {
-        int result =0;
-        while(x!=0){
-            int temp = result *10 + x%10;
-            if(temp/10!=result)
+     public int reverse(int x) {
+        
+        int res = 0;
+        
+        while( x != 0){
+            int temp = res * 10 + x % 10;
+            
+            // 溢出
+            if(temp / 10 != res)
                 return 0;
-            result = temp;
-            x = x/10;
+            res = temp;
+            
+            x /= 10;
         }
-        return result;
+        
+        return res;
     }
 }
