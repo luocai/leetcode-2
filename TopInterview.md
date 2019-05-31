@@ -3,14 +3,14 @@
 
 | \# | Problems | Difficulty | Solution | ok |
 |----|----------|-----------|------|-----|
-| 001  | [Two_Sum](https://leetcode.com/problems/two-sum/)  | Easy | [Java](./code/lc1.java)
-| 002  | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) |Medium| [Java](./code/lc2.java)
-| 003  | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | [Java](./code/lc3.java)
+| 001  | [Two_Sum](https://leetcode.com/problems/two-sum/)  | Easy | [Java](./code/lc1.java) | 111 ok
+| 002  | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) |Medium| [Java](./code/lc2.java) | 110 ok
+| 003  | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | [Java](./code/lc3.java) | 109 ok
 | 004  | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | Hard | [Java](./code/lc4.java)
-| 005  | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) |Medium|[Java](./code/lc5.java)
-| 007  | [Reverse Integer](https://leetcode.com/problems/reverse-integer/) |Easy|[Java](./code/lc7.java)
+| 005  | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) |Medium|[Java](./code/lc5.java) | 108 ok
+| 007  | [Reverse Integer](https://leetcode.com/problems/reverse-integer/) |Easy|[Java](./code/lc7.java) | 107 ok
 | 008  | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) |Medium|[Java](./code/lc8.java)
-| 010  | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) | Hard | [Java](./code/lc10.java) | 106 ok
+| 010  | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) | Hard | [Java] |(./code/lc10.java) | 106 ok
 | 011  | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) |Medium| [Java](./code/lc11.java) | 105 ok
 | 013  | [Roman to Integer](https://leetcode.com/problems/roman-to-integer) |Easy| [Java](./code/lc13.java) | 104 ok
 | 014  | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix) |Easy| [Java](./code/lc14.java) | 103 ok
