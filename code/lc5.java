@@ -22,12 +22,12 @@ public class lc5 {
                 if(s.charAt(i) == s.charAt(j) ){
                     // j-i == 0 说明是同一个位置，true
                     // j-i == 1 说明j 和 i相邻 ， true
-                    if((j-i) < 2 || dp[i+1][j-1])  
+                    if((j-i) < 2 || dp[i+1][j-1]) {
                         dp[i][j] = true;
-                    
-                    if((j-i+1) > res.length()){
-                        res = s.substring(i,j+1);
-                    }
+                        if((j-i+1) > res.length()){
+                            res = s.substring(i,j+1);
+                        }
+                    }    
                 }
             }
         }
