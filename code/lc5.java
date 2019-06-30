@@ -15,7 +15,7 @@ public class lc5 {
         boolean[][] dp = new boolean[s.length()][s.length()];
         String res = "";
         
-        // 注意 i从尾部开始
+        // 注意 i从尾部开始   i的边界值包括 0
         for(int i = s.length()-1; i >= 0; i--){
             for(int j = i ; j < s.length() ; j++){
 
