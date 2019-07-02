@@ -19,6 +19,7 @@ public class lc39 {
         System.out.println(combinationSum(candidates, target).toString());
     }
     
+    // 这题要注意的就是数可以重复被选择
     //回溯法
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         
@@ -32,7 +33,7 @@ public class lc39 {
 	
     //回溯
 	public void solve(List<List<Integer>> result,List<Integer> res,int sum,int [] canditates,int index, int target){
-		
+		// 注意这句要在前面
 		if(sum == target){
 			result.add(new ArrayList<Integer>(res)); //记得要new一个
 			return;
