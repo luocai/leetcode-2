@@ -25,6 +25,7 @@ public class lc69 {
                 l = m + 1;
             }
         }
+        // r = m -1 表示向下取整
         return r;
     }
     
