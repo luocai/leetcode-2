@@ -62,13 +62,13 @@ public class LRUCache {
     }
 
     public void put(int key, int value) {
-        //如果有该点，则取出，然后修改，并放到首部如果有，则取出，然后修改，并放到首部
+        //如果有该点，则取出，然后修改，并放到首部
         if (map.get(key) != null) {
             Node node = map.get(key);
             node.value = value;
             deleteNode(node);
             addToHead(node);
-        } else { // 如果有，则取出，然后修改，并放到首部
+        } else { // 如果没有，则放入，记得判断容量哦
             Node node = new Node(key, value);
             map.put(key, node);
             if (count < capicity) { // 判断容量
