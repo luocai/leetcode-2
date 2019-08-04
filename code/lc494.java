@@ -12,6 +12,9 @@ package code;
  */
 public class lc494 {
     
+    //sum(P) - sum(N) = target
+    //sum(P) + sum(N) + sum(P) - sum(N) = target + sum(P) + sum(N)
+    //2 * sum(P) = target + sum(nums)
     //dp[i]代表的含义是从nums中取数相加和为i时有多少种取法。
     //i=0时，就是说从nums中取数相加和为0时有几种取法，只有一种即一个数也不取，所以dp[0]=1
     // 转化为找到nums的一个子集 P，使得sum(P) = (target + sum(nums)) / 2
